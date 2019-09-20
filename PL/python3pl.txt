@@ -1,0 +1,29 @@
+**python3**
+<meta>
+-기본 자료형
+동적언어(숫자,문자열,리스트("[]"),튜플("()"),딕셔너리("{}"),집합("{}")
+-줄 구분
+\n,\t
+-주석
+--한줄
+#
+--블록
+'''
+'''
+</meta>
+
+<control statment>
+if
+while
+for i in
+a(True) if 조건 else b(False)
+def NAME():
+class NAME:
+</control statment>
+
+<function>
+<built-in>
+open(),list()
+</built-in>
+
+</function>

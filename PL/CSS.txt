@@ -1,0 +1,164 @@
+**CSS**
+<meta>
+-줄 구분
+;
+-주석
+--블록
+/*
+*/
+</meta>
+
+[selector,selector{property:value; poperty:value;}]
+selector-선택요소
+	*-문서의 모든 요소 선택
+	tag1-태그 선택
+	#word1- id=word1 값인 요소 선택[#p1{property:value;}]
+	.word1-class=word1 값인 요소 선탁
+	{selector1 selector2}-selector1 후손의 selector2 요소 선택
+	{selector1>selector2}-selector1 자식의 selector2 요소 선택
+	{selector1+selector2}-selector1 바로뒤 형제의 selector2 요소 선택
+	{selector1~selector2}-selector1 뒤의 형제의  selector2 요소 선택
+	[attribute1]}-태그의 속성을 갖는 요소 선택
+	[attribute1="value"]-태그의 속성과 속성값을 갖는 요소 선택
+	[attribute1~="vlaue"]-태그의 속성값(공백 단위의,단어)을 포함하는 요소 선택
+	[attribute1|="value"]-태그의 속성의 값이 value 이거나 value- 포함하는 요소 선택
+	[attribute1^="value"]-속성값으로 시작하는 요소를 선택
+	[attribute1$="value"]-속성값으로 끝나는 요소를 선택
+	[attribute1*="value"]-속성값을 포함하는 요소를 선택
+-가상 클래스 셀렉터
+	{selector1:element}-selector1 요소의 특정 상태에 따라 요소 선택
+	-링크 셀렉터
+	:link	셀렉터가 방문하지 않은 링크일 때
+	:visited	셀렉터가 방문한 링크일 때
+	:hover	셀렉터에 마우스가 올라와 있을 때
+	:active	셀렉터가 클릭된 상태일 때
+	:focus	셀렉터에 포커스가 들어와 있을 때
+	-ui 요소 상태 셀렉터
+	:checked 셀렉터가 체크 상태일 때
+	:enabled 셀렉터가 사용 가능한 상태일 때
+	:disabled 셀렉터가 사용 불가능한 상태일 때
+	-구조 가상 클래스 셀렉터
+	:first-child	셀렉터에 해당하는 모든 요소가 첫번째 자식이면 요소를 선택한다.
+	:last-child 셀렉터에 해당하는 모든 요소중 마지막 자식이면 요소를 선택한다.
+	:nth-child(n) 셀렉터에 해당하는 모든 요소 중 앞에서 n번째 자식이면 요소를 선택한다.
+	:nth-last-child(n)	셀렉터에 해당하는 모든 요소 중 뒤에서 n번째 자식이면 요소를 선택한다.
+	:first-of-type	셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 첫번째 등장하는 요소를 선택한다.
+	:last-of-type 셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 마지막에 등장하는 요소를 선택한다.
+	:nth-of-type(n)	셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 앞에서 n번째에 등장하는 요소를 선택한다.
+	:nth-last-of-type(n) 셀렉터에 해당하는 요소의 부모 요소의 자식 요소 중 뒤에서 n번째에 등장하는 요소를 선택한다.
+	:not(selector1)	셀렉터에 해당하지 않는 모든 요소를 선택한다.
+	:valid(셀렉터)	정합성 검증이 성공한 input 요소 또는 form 요소를 선택한다.
+	:invalid(셀렉터)	정합성 검증이 실패한 input 요소 또는 form 요소를 선택한다.
+		pattern(at) required -적합성 검사
+-가상 요소 셀렉터
+	::first-letter	콘텐츠의 첫글자를 선택한다.
+	::first-line	콘텐츠의 첫줄을 선택한다. 블록 요소에만 적용할 수 있다.
+	::after	콘텐츠의 뒤에 위치하는 공간을 선택한다. 일반적으로 content 어트리뷰트와 함께 사용된다.
+	::before	콘텐츠의 앞에 위치하는 공간을 선택한다. 일반적으로 content 어트리뷰트(content값 삽입)와 함께 사용된다.
+	[    h1::after {
+      content: " CSS3!!!";
+      color: red;
+    }]
+	::selection	드래그한 콘텐츠를 선택한다. iOS Safari 등 일부 브라우저에서 동작 않는다.
+-크기 단위
+	px-1/96 인치
+	%-백분률 단위, 요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈)에 상대적인 사이즈
+	em-배수(倍數) 단위, 요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈)에 상대적인 사이즈
+	rem-배수(倍數) 단위, 상위 요소(html)의 사이즈를 기준
+	vw	viewport 너비의 1/100
+	vh	viewport 높이의 1/100
+	vmin	viewport 너비 또는 높이 중 작은 쪽의 1/100
+	vmax	viewport 너비 또는 높이 중 큰 쪽의 1/100
+-색상 단위
+	키워드 - red,aqua,blue,orange etc..
+	HEX 코드 단위 (Hexadecimal Colors)	[#000000]
+	RGB (Red, Green, Blue)	[rgb(255, 255, 0)]
+	RGBA (Red, Green, Blue, Alpha/투명도)	[rgba(255, 255, 0, 1)]
+	HSL (Hue/색상, Saturation/채도, Lightness/명도)[hsl(0, 100%, 25%)]
+	HSLA (Hue, Saturation, Lightness, Alpha)	[hsla(60, 100%, 50%, 1)]
+
+-박스    margin-border-padding-content
+-box
+	display - layout 정의,상속x
+	  block	block 특성을 가지는 요소
+	  inline	inline 특성을 가지는 요소
+	  inline-block	inline-block 특성을 가지는 요소
+	  none	해당 요소를 화면에 표시하지 않는다 (공간조차 사라진다)
+	visibility - 렌더링 여부
+	  visible	해당 요소를 보이게 한다 (기본값)
+	  hidden	해당 요소를 보이지 않게 한다. display: none;은 해당 요소의 공간까지 사라지게 하지만 visibility: hidden;은 해당 요소의 공간은 사라지지 않고 남아있게 된다.
+	  collapse	table 요소에 사용하며 행이나 열을 보이지 않게 한다.
+	  none	table 요소의 row나 column을 보이지 않게 한다. IE, 파이어폭스에서만 동작하며 크롬에서는 hidden과 동일하게 동작한다.
+	opacity- 투명도(0.0~1.0)
+	position -
+	z-index - 'N' 레이아수 우선순위
+-content
+	width-너비
+	height-높이
+	max-width,height- 최대 너비 높이
+	min-width,height -최소 너비 높이
+-margin,padding
+	margin,padding = size1 -4면
+	-top, -right, -left, -bottom  [margin-top]
+	margin,padding : size1,size2,size3,size4 -top,right,bottom,left
+		auto - 중앙정렬
+-border
+	border-style - 테두리 종류(dotted,dashed,solid,double,groove,ridge,inset,outset,none,hidden)
+	border-width - 두께 (border-style과 함께 적용)(thin,medium,thick,px....)
+	border-color - 색 (border-style과 함께 적용)
+	border-radius - 모서리 둥글게(px,em,%) top-left top-right bottom-right bottom-left
+	타원 - [border-radius: 10px 20px 30px 40px / 5px 10px 15px 20px;] - border-top-left-radius: 10px 5px; border-top-right-radius: 20px 10px; border-bottom-right-radius: 30px 15px; border-bottom-left-radius: 40px 20px;
+	border-image-repeat	
+	box-sizing - border-box(width,height 값 테두리까지 포함 기준), content-box(기본값)
+	  stretch    =늘이기
+	  repeat    =반복
+	  space    =반복, 균등 공백
+	  round    =반복, 크기 조절
+-ourline    =margin 외각 박스 두께 영향x
+	outline - '[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]'
+	  -
+-글
+	color - 색상'
+	direction - ltr(default), rtl (우측->좌측)
+	letter-spacing - '크기' 글자 사이 간격
+	word-spacing - '크기' 단어 사이 간격
+	text-indent - '크기' 단락 첫줄 들여쓰기
+	text-align -'[left, right, center]' 정렬
+	tect-decoration - 'line || color || stylee'
+	  -line - '[none,underline,overline,line-through]'
+	  -style - '[solid,douvle,dotted,dashed,wavy]'
+	text-transform - '[uppercse,lowercase,capitalize]'
+	text-shadow - '[ <color>? <offset-x> <offset-y> <blur-radius>?]'
+	line-height - 글자 wnf rksrur(px,공백(p),%,em)
+	vertical - '크기 || symbol etc..' 
+-글꼴
+	font-family - ' "글꼴1","글꼴2","글꼴3"  '
+	font-style - 'normal || italic'
+	font-weight - 'ligher || normal || bold etc.. || N ' 
+	font-size - '크기'
+-background
+	background - 'color || iamge || repeat|| position || atachement'
+	-color -'색상'
+	-image -배경 이미지
+	  url("address1")
+	-repeat - 'repea-x || repeat-y' 배경이미지 반복
+	  repeat-x -  = repeat no-repeat
+	  repeat-y
+	  repeat    =반복
+	  space    =반복, 균등 공백
+	  round    =반복, 크기 조절
+	  no-repeat
+	-position - 'px,%,top,left etc..' 상대 위치
+	-tachment - 'fixed' 배경고정
+-list
+	list-style - <'list-style-type'> || <'list-style-position'> || <'list-style-image'>
+	  -type 'disc || circle etc..'
+	  -image
+	  -position 'outside,inside'
+-table
+	border
+	border-collapse - 'seperate,collapse' 
+	border-spacing - '크기'
+	caption-side - '
+	empty-cells
+	table-layout

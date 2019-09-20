@@ -1,0 +1,256 @@
+일반 운영 관리
+{
+Set-UID : 파일 소유자 권한으로 s
+Set-GID : 파일 소유 그룹 권한으로 s
+Sticky-Bit : 생성 자유, 삭제 제한(본인 파일만 가능) t
+}
+readlink [] obj
+-f 파일
+useradd [option] 사용자계정
+	-p 암호 추가  -d 홈디렉터리 지정
+	-g 그룹추가(레드헷 동일 그룹, 외 uers)  -G 보조그룹추가
+	-c 설명  -s셸  -D /etx/default/useradd 설명, 변경(-D -s,m etc)
+	-m 최종 홈 디렉터리 생성  -k /etc/skel 외의 환경파일 폴더 지정
+	-f inactive  -e 만기일 날짜로 지정 -u uid값 지정
+usermod [] 사용자계정
+	-d -m -g -s -u -e -f -c -G -a
+userdel [] 사용자계정
+	-r 홈 dir ,메일 관련까지
+passwd [] 사용자명
+	-S 정보 -l 잠금 -u 'unlock' 
+	-d passwd 삭제 -n 최소 사용 -x 최대 사용
+	-w 경고 날짜 -i 'inactive' -e 다음 로그인시 변경
+chage [] 사용자계정
+	-l 정보'list' -d passwd 변경 날짜
+	-m 최소 사용 -M 최대 사용 -I 유예기간
+	-E 만기일 -W 경고 날짜
+su  [option] [사용자명]
+	-,-l root 환경변수
+	-c 일시 수행
+groupadd [] 그룹명
+	-g 'gid' -r 시스템 레벨 gid(0~499)
+groupmod [] 그룹명 
+	-n 'name' -g 'gid
+gpasswd [] group
+	-A 관리자 지정 -a 사용자 추가 
+	-d 사용자 제외 -r passwd 제거
+	-R passwd 비활성화 -M 사용자 추가(root)
+newgrp 그룹명
+users	=시스템 로그인 사용자 아이디
+who	=시스템 로그인 사용자 아이디
+	-b 부팅시간 -d 죽은 프로세스
+	-H 헤더 출력 -l 로그인 프로세스(login)
+	-p 'init'에 의한 프로세스 -r 런 레벨
+	-t 시스템시간 -T 메시지 상태 
+	-u 로그인한 사용자 -m (=who am i) 
+	-a (=-ndlprtTu)
+whoami	=실질적 사용중 권한자
+w	=시스템 로그인 사용자 아이디, 작업
+	-h 헤더 출력x -s 간략히 출력
+logname	=시스템 로그인 사용자 아이디
+id [] [user]
+	-g 주 그룹 -G 모든 그룹
+	-u 'uid' -n 'name'
+groups [user]
+lslogins []		전체 사용자 정보
+	-G 그룹 정보 
+	-L 마지막 로그인 -u 시스템 계정 제외
+chmod [] mode file(s)
+	-R 'recursive' -c 변경된 정보 출력
+	-f 중요 오류만 출력
+chown [] owner[[:.]group] file(s)
+	-R 'recursive' -c 정보 출력
+	-f 'slinet'
+chgrp [] group file(s)
+	-R -c -f
+	-g 링크 파일 그룹 소유권 변경
+umask [] [값]
+	-S 문자로 표기
+ln [] 원본 대상파일	=하드링크
+	-s 심볼릭 링크 -v 'verbose' -f 덮어쓰기
+fdisk [] [장치명]
+	-l 테이블 정보 출력 -s partition 크기 출력
+mkfs [] 장치명	=파일 시스템 생성
+fask [] 장치명
+	-a 확인 질문x -r 확인질문o - A 모든 파일시스템 체크
+	-P 병렬로 체크(-AP) -R 루트 파일시스템x(-AR) -N 실행하지 않고 실행될 목록만
+	-ㄴ 시리얼화 -V 자세한 출력 -t fs_type 시스템 유형만
+e2fsck [] 장치명
+	-n 물음에 no로 인식 -y yes로 인식 -c 배드블록 검사
+	-f 틀暉 파일까지 검사
+df []	=디스크의 크기
+	-h human -k -m kilo,mega -T 파일시스템
+	-i 아이노드 사용량
+du [] [파일s]	=파일, dir 크기
+	-h -b -k -m human,bite,kilo,mega
+	-a  디렉토리의 각각의 크기 -s 합한 값만
+
+mkswap [] (파일,파티션) [size]
+	-c 배드블록 검사
+swapon [] (파일,파티션)
+	-s  상태 출력 -a fstap에 등록된 스왑 
+swapoff [] (파일,파티션)
+	-a 모든 스왑 중지
+free []	=메모리 상태
+	-m -k mb,kb
+dd if=/dev/zero of=/add-fi bs=1K count =102~
+	= 파일 생성
+/etc/fstab
+	/dev/sdb	swap	swapdefaults	0	0
+
+mkdir [] dirname(s)
+	-p 서브디렉터리(parents) -m 권한 설정(mode) -v (verbose)
+ls [] [file||dir]
+	-a 숨김파일 -F 관련정보(*/@) -l (long) -d 현 dir정보
+	-t 수정 시간순 -u 사용시간 -i i-node -r 알파벳역순(reverse)
+	-R (recursive)-S 크기순 -1 하나씩 -h (human)
+cp [] source(s) desti
+	-r-R (recursive) -i 덮어쓰기 질문(interactive) -f 강제 덮어쓰기 
+	-b 덮어쓰기시 백업본 -s 심볼릭 링크 -p 허과권 복사
+	-v (verbose) -a  (-dpR) -l 하드링크 -u (update)
+mv [] source(s) desti
+	-i  -f  -b  -v  -u
+rm [] file,dir(s)
+	-i 질의(interactive) -f 강제 -r-R (recursive) -- -로 시작하는 이름
+touch [] file
+	-a 적급시간 -m 수정시간 -t 날짤로 -r 특정 파일로
+file [] file
+	-b 파일 이름 출력x
+find [path] option expression
+	-name 이름 -user -group -uid -gid -perm +=AND,-=OR(+6000) -type (dflbcps)
+	-atime n 일 이전에 접근한 -ctime n change시간 기준 -mtime n modify시간 기준
+	-exec (xargs) -ls (ls -l) -size n 블록 길이(+=>,-=<,Nc=char단위) ! =가아니면
+	-inum -iname 대소문자구별x -maxdepth n 최대 깊이 -empty 크기0,빈dir -newer (mtime) -cnewer (ctime)
+	2>/dev/null 오류 버리기
+cat [] [file(s)]
+	-b 행번호 -n 행번호(공백포함) -E $(개행)표시 -T 탭(^I)으로
+	-v-A-s
+head [] file(s)
+	-n 행수 -c 바이트 -q 헤더x
+tail [] file(s)
+	-f 새로운 행 모니터링
+	-n m m개 출력 -n +m m부터 출력
+grep [] pattern file(s)
+	-b 줄의 시작점-c (count) -h 헤더x -i 대소문자 구분x(ignore case)
+	-n 줄번호 -v 불일치 패턴(inverse) -w 한단어로 일치 -x 한 줄로 일치
+	-l 파일 이름만 출력 -r 하위 디렉터레까지 -o 매칭패턴만(only) -E (egrap) -F (fgrep)
+wc [] file	=갯수(l w c file)
+	-l 행수(line) -w (word) -c (bytes) -L 가장 긴라인 길일
+sort [] file
+	-b 공백 무시 -d 공백,알파벳,숫자
+	-f 대소문자 무시 -r 내림차순 -c 정렬 검사
+	-n 숫자로 -u 중복 줄 한줄만 -M 월별 정렬
+	-t 필드 구분자 -k n[,m] 정렬기준 필드
+cut option file
+	-c 문자수 기준 -f 필드 기준 (1,1-10,etc..)
+	-d 필드 구분자
+split [] file [file_name]
+	-b 바이트 단위 -C 최대한 행수에 맞춰서 -l 행수 단위
+at [] time		=HHMM,HH:MM,amHH:MM,now,tomorrow,+Nminute,hour
+	-q 큐 대기 큐지정[a-zA-Z] -c 작업 작업정보
+	-d 삭제 -l 리스트 -m 메일로 통보
+atq	=(at -l)
+atrm 작업번호
+corntab	=(minute hour day_of_month month day_of_week (user-name) command)
+	-l 리스트 -e 작성 수정
+	-r 삭제 -u 루트 사용자
+tmux []
+	new -s session_name
+	kill-sesson -t session_name
+	a -t session_name
+	ls
+	(ctrl+b)
+
+	s 세션 리스트 : 명령행
+	c 윈도우 생성 , 이름변경 & 윈도우 삭제 n,p 다음 이전 윈도우 N 윈도우 이동 w 윈도우 리스트
+	%," 세로 가로 팬 분할 z 줌 x 팬 삭제
+ps []
+	a 터미널 연관ps(all) u 소유자를 기준으로
+	x 터미널에 종속 되지 않은 l 길게
+	e 환경 변수 f 상속관계 p 턱정 pid
+	-A 모든ps -e 모든ps -a 세션리더제외
+	-f 유닉스 스타일로 -C ps 지정한 ps만
+	-o var (pid,tty,time,etc..)출력포멧 -p 'pid'
+pstree []
+	-a 인자까지 -h 조상프로세스 강조
+	-n pid갑승로 정렬 -p pid명시
+top []
+	-d 갱신시간 -p 특정pid
+kill [] [signal] [pid or %job_number]
+	-l 시그널 종류 -s signal 시그널 이름 지정
+killall [] psname
+	-l (list) -w (wait) -v (verbose)
+	-u 사용자명 특정 사용자 프로세스
+jobs []
+	-l pid추가
+fg [%job_n or job_n]
+bg
+nice [] psname
+	-n,N 증감
+renice [] ni값 pid
+	-p 'pid' -u 'user' -g 'group
+nohup 명령	-터미널 백그라운드
+pgrep [] [pattern]
+	-u 'user' -U 'uid' -g 'group -G 'gid' -t 'terminal'
+pkill [] [pattern]
+	-u-U-g-G-t
+{
+레드헷 (centos) RPM,YUM
+데비안 (debian,ubuntu) Dpkg,apt-get
+수세 YaST,zypper
+rpm - name-version-release-architecture
+}
+rpm [] [pkg_name]
+	-i 'install' -U  'upgrade' -F 'freshen'
+	-v 'verbose' -h #으로 표시(hash)
+	--force 강제설치 --nodeps 의존성 무시
+	--vv 메시지 자세히 --test 설치 테스트 --rebuilddb 리스트 업데이트
+ *	-e 제거 --allmatches 중복설치 모두 제거
+ *	-q 질의 모드 -i 패키지 정보 -l 파일정보 -a 설치된 패키지
+	-p pkg_name  -f file_name 해당파일의 패키지
+	 -c 설정파일,스크립트 -d 문서 파일 -R 의존성
+	--changelog 바뀐 내용 --scripts 설치,제거 스크립트
+	--filesbypkg 패키지명 --queryformat 출력형태
+ *	-V 검증 모드 -a 모든 패키지
+rpmbuild [] srcpkg		-소스 파일을 패키지로
+	--rebuild
+yum [] [command] [pjg_name]
+	-y 'yes' -v 'verbose'
+ *command
+	list info [pkg_name] check-update
+	update install search remove,erase
+	grouplist groupinfo groupupdate
+	groupinstall groupremove whatprovides 패키지정보검색
+	clean history
+dkpg [] [pkg_name] [pkg_file_name]
+	-i-l 'lst' -I(i) 'info' -c 'content' -L 'listfile'
+	-r 'remove' env제외 -P 'purge' env까지 -S (rpm -qf)
+	-C 'audit' --unpack 패키지풀기 env제외 --configure env설정 -s 패키지 상태
+	-R dir dir안에있는 패키지 설치(-iR)
+apt-get [] [command] [pkg_name]
+	-y 'yes' --purge env같이 제거
+ *command
+	update -목록 갱신upgrade install remove
+tar [] [file_name]
+	-c 압축 -x 풀기 -v 'verbose' -f name 이름지정
+	-r tar파일뒤에 추가 -t tar안의 목록 -h 심볼리의 원본 저장
+	-C dir지정 -p  권한 유지 -z tar.gz사용 -Z tar.Z사용 -j tar.bz2사용 -J tar.xz사용
+compress,uncompress	-확장자 .Z 압축
+gzip,unzip	-확장자 .gz
+	-d 압축해제 -1 (fast) -9 (best) -c 표준출력으로 -l 'list' -r 'recursive' -v 'verbose'
+bzip2,bunzip2 [] file_name
+	-d-1-9-c-f 'force
+xz,unxz [] file_name
+	-z-d
+zip,unzip [] file_name src_file_name
+	-r
+gcc [] file_name
+	-o 실행파일 이름 -c 링크x(확장자 .o)
+lsmod 	-모듈 하리스트
+insmod mod_name		-모듈 커널 적재
+rmmod mod	-모듈제거
+modprobe [] mod [기혼=값]
+	//적재, 제거 모듈 의존성 해결
+	-l-r-c
+
+

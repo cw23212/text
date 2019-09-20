@@ -1,0 +1,255 @@
+**JavaScript**
+<meta>
+-객체지향,인터프리터,camel case
+-대소문자
+변수,함수,이름,예약어 구분
+
+-기본 자료형(호이스팅)
+동적 타입
+--원시타입
+num,string,bollean,symbol,undefined,object
+null = 데이터타입,값x
+undefined =타입x,값x,NaN
+--상수
+Infinity,NaN
+--배열(동적,hole=undefined)
+var arr=[], var arr=Array(), var arr=new Array()
+--연관배열(Array객체,메소드x)
+--타입변화
+Number(),String() etc.. 함수
+--범위
+지역변수(함수 내에서 var 사용)
+전역변수(함수내에서 변수 오버라이딩된 변수 호출시 window객체 명시)
+--선언
+var NAME;
+NAME=value;
+
+-함수(호이스팅)
+function NAME(){}
+--호이스팅
+전역변수->함수->지역변수
+--인자
+더 적은 인자 -오류x
+더 많은 인자 -arguments에 저장, ...var_name	<des Array객체,ie지원x>
+defaultault parameter <des ie지원x>
+
+-객체
+obj.property || obj[property]
+--생성(레퍼러티)
+var 객체이름 ={:,:}
+var 객체이름 = new 생성자
+var 객체이름 = object.create(prototype,{:.:})
+--생성자
+function obj_name(){ NAME:"",f-name: function(){}}
+constructor()
+--프로퍼티
+obj.new-prop=value
+delete obj.pro
+---geter
+get:function(){}
+---setter
+set:function(par){}
+--프로토타입
+obj.prototype[]
+--래퍼 객체
+문자열,숫자,불리언 원시 타입 접근시 임시 객체
+--표준객체
+Number	<des 64bit 부동 소수점>
+-줄 구분
+;
+-주석
+--한줄
+//
+--블록
+\*
+*\
+중첩 X
+
+-연산
+++,!,<<,?:,+=,&&,||
+==,!=	<des>값이 같으면</des>
+===,!==	<des>값이 같고,타입이 같으면</des>
++	<des>문자열 더하기</des>
+-구문
+typeof, instanceof, var, new, delete, void, return
+<des>타입반환,인스턴스의 객체확인, 변수선언, 객체생성 </des>
+-제어문
+if(){}else if(){}else{}
+switch(var){case v1:}
+while(){}
+do(){}while();
+for(;;){}
+for(in){}	<des enumerable>
+for(of){}	<des none enumerable,ie 지원x>
+label:		<des 제어문 제어>
+continue,break
+-노드
+Document-html-요소[빈 요소 | 텍스트 요소 |  ]
+</meta>
+
+<pre-functions>
+ eval()
+ isFinite()
+ isNaN()
+ parseFloat()
+ parseInt()
+ decodeURI()
+ decodeURIComponent()
+ encodeURI()
+ encodeURIComponent()
+ escape()
+ unescape()
+ Number()
+ String()
+</pre-functions>
+
+<object>
+</object>
+<u-object>
+##window{	<des 생략 가능>
+alert(string)	<des 대화상자>, confirm(), prompt()
+innerheight , innerwidth, open(), close()
+setTimeout(),setInterval(), clearTimeout(), clearInterval()
+-listener
+--attribute
+onload
+--method
+addEventListener() </des 버블링(false,default),캡쳐링(true)>
+attachEvent(), removeEventListener(), preventDsfault(), stopPropagation()
+}
+##event{
+type, target
+}
+##screen{
+width, heigh, availWidth, availHeight, colorDepth, pixelDepth
+}
+##navigator{
+appName, appCodeName, appVersion, userAgent, platform, language, cookieEnabled
+javaEnabled()
+}
+##document{
+document.getElementsByTagName(태그이름)
+document.getElementById(아이디)
+document.getElementsByClassName(클래스이름)
+document.getElementByName(name속성값)
+document.querySelectorAll(선택자)
+document.createElement(HTML요소)
+document.write(텍스트)
+document.getElementById(아이디).onclick = function(){ 실행할 코드 }
+document.URL,document.baseURI,document.doctype,document.documentURI,document.inputEncoding,document.readyState,document.lastModified
+document.strictErrorChecking , document.anchors, document.applets, document.body, document.cookie, document.domain, document.forms, document.images, document.links, document.referrer, document.title, document.URL, document.baseURI, document.doctype, document.documentElement , document.documentMode , document.documentURI , document.domConfig, document.embeds, document.head, document.implementation , document.inputEncoding , document.lastModified , document.readyState , document.scripts
+write()
+}
+##location{
+location.href, location.hostname, location.pathname
+location.assign(), location.replace(), location.reload()
+}
+##history{
+history.length
+back(), go(), forward()
+}
+##console{
+log()
+}
+##Object{
+keys(), hasOwnProperty(), propertyIsEnumerable(),isPrototype() ,isExtensible() ,toString() ,valueOf(), defineProperty()
+}
+##Object.property{
+}
+##Number{
+--method
+Number.parseFloat(), Number.parseInt(), Number.isNaN(), Number.isFinite(), Number.isInteger(), Number.isSafeInteger()
+--prototype
+toPrecision(), toString(), valueOf()
+}
+##Math{
+--method
+Math.min(), Math.max(), Math.random(), Math.round(), Math.floor(), Math.ceil(), Math.sin()
+Math.E, Math.LN2, Math.LN10, Math.LOG2E, Math.LOG10E, Math.PI, Math.SQRT1_2, Math.SQRT2
+}
+##Date{
+<des> new Date(),new Date("날짜를 나타내는 문자열"),new Date(밀리초),new Date(년, 월, 일, 시, 분, 초, 밀리초)
+YYYY-MM-DDTHH:MM:SS
+YYYY-MM-DD
+YYYY-MM
+YYYY(defaul-1월1일 9:00)
+MMM DD YYYY
+DD MMM YYYY
+MM/DD/YYYY
+YYYY/MM/DD
+Wed May 25 2016 17:00:31 GMT+0900
+</des>
+Date.now()
+getDate(), getDay(), getMonth(), getFullYear(), getHours(), getMilliseconds(), getMinutes(), getSeconds(), getTime(), getTimezoneOffset()
+setDate(), setMonth(), setFullYear(), setHours(), setMinutes(), setSeconds(), setTime()
+}
+##String{
+length
+String.fromCharCode()
+indexOf(), lastIndexOf(), charAt(), charCodeAt(), charPointAt(), slice(), substring(), substr(), split(), concat(), toUpperCase(), toLowerCase(), trim(), search(), replace(), match(), includes(), startsWith(), endsWith(), toLocaleUpperCase(), toLocaleLowerCase(), localeCompare(), normalize(), repeat(), toString(), valueOf()
+}
+##Array{
+length
+Array.isArray(), Array.from(), Array.of()
+push(), pop(), shift(), unshift(), reverse(), sort(), splice()
+join(), slice(), concat(), toString(), indexOf(), lastIndexOf()
+forEach(), map(), filter(), every(), some(), reduce(), reduceRight(), entries(), keys(), values(), find(), findIndex()
+}
+##HTMLCollection{
+<des>
+parentNode : 부모 노드
+childNodes : 자식 노드 리스트
+firstChild : 첫 번째 자식 노드
+lastChild : 마지막 자식 노드
+nextSibling : 다음 형제 노드
+previousSibling : 이전 형제 노드
+--nodeName
+문서 노드(document node) : #document
+요소 노드(element node) : 태그 이름 (영문자로 대문자)
+속성 노드(attribute node) : 속성 이름
+텍스트 노드(text node)	: #text
+--nodeValue
+요소 노드(element node) : undefined
+속성 노드(attribute node) : 해당 속성의 속성값
+텍스트 노드(text node) : 해당 텍스트 문자열
+--nodeType
+요소 노드(element node) : 1
+속성 노드(attribute node) : 2
+텍스트 노드(text node) : 3
+주석 노드(comment node) : 8
+문서 노드(document node) : 9
+</des>
+nodeName
+nodeValue
+nodeType
+}
+##Nodelist{
+appendChild(), insertBefore(), insertData()
+createElement(), createAttribute(), createTextNode()
+removeChild(), removeAttribute(), replaceData(), replaceChild() 
+cloneNode()
+nodeValue
+setAttribute()
+}
+##RegExp{
+<des>
+-플래그
+i	검색 패턴을 비교할 때 대소문자를 구분하지 않도록 설정함.
+g	검색 패턴을 비교할 때 일치하는 모든 부분을 선택하도록 설정함.
+m	검색 패턴을 비교할 때 여러 줄의 입력 문자열을 그 상태 그대로 여러 줄로 비교하도록 설정함.
+y	대상 문자열의 현재 위치부터 비교를 시작하도록 설정함
+</des>
+var Re=/pattern/flag
+new RegExp()
+RegExp.prototype.exec(), RegExp.prototype.test(), RegExp.prototype.toString()
+}
+</u-object>
+
+-DOM
+Document-html-요소...-속성..-텍스트\
+
+--변수명
+대소문자 구분
+변수는 소문자로 시작
+상수는 전부 대문자로
+

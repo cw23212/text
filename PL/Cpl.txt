@@ -1,0 +1,38 @@
+**C language**
+<meta>
+-기본 자료형
+int,char,double..
+-줄 구분
+;
+-주석
+--한줄
+//
+--블록
+/*
+*/
+-변수(정적)
+const </des 상수>
+static 	</des 전역>
+unsigned
+char,int,short,long,long long
+float,double, long double
+*
+--배열
+type Name[const][const]={{}}
+--타입변화
+(type)Variable
+-연산자
+?:
+sizeof
+-제어문
+if()
+else if()
+else
+switch(){case:}
+while()
+do{}while();
+continue,break
+-함수
+r-type Name(parmeter){}
+</meta>
+

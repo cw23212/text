@@ -1,0 +1,155 @@
+**HTML5**
+<meta>
+-html5
+<!doctype html>
+-주석
+--한줄
+<!--
+-->
+
+
+
+html -
+	lang(at) -'language' 언어
+--헤드
+title(tag) - 문서의 제목 탭에 표시
+style(tag) -[<style>
+      body {
+        background-color: yellow;
+        color: blue;
+      }
+    </style>]
+meta(tag) - (empty element)[<meta/>]
+	charset(at) - 'utf-8'문자셋
+	name(at)-"keywords" 검색엔진,"decripton"웹페이지설명,"author"저자 [<meta name="keywords" content="p~e">]
+	http-eqiuiv(at) -"refresh"새로고침[<meta http-equiv="refresh" content="3">]
+link(tag)-
+	rel-'element' 링크대상과의 관계
+	href-'address' 링크 값
+	[<link rel="stylesheet" href="css/style.css">]
+script(tag)
+	type - text/javascript
+	src - 위치
+
+--글자 형태
+hN(tag) -(semantic) 제목
+b(tag) -볼드체
+strong(tag) -(semantic) 볼드체
+i(tag) - italic체
+em(tag) - italic체(Semantic)
+small(tag) - 작게
+mark(tag) - 강조
+del(tag) - 취소선
+ins(tag) - 밑줄
+sub/sup(tag) - 아래/위에 표시
+
+--본문
+p(tag) - 단락
+br(tag) -(empty element) 개행
+pre(tag) - 형식화 txt 작성된 그대로
+ins(tag) - 밑줄
+hr(tag) - (empty element)수평줄
+q(tag) - 짧은 인용문
+blockquote(tag) - 긴 인용문
+&nbsp;(fun) - 연속적 공백[p~e&nbsp; p~e]
+a(tag) - 하이퍼링커 [<a href="address">p~e</a>]
+	href(at) - 'address'위치값 ".\(작업중 파일 dir 위치","..\(작업 중 상위 dir 위치","#temp(id위치)"
+	id(at) - 'word1' [<h2 id="word1">p~e</h2>,<a href=#word1>p~e</a>]
+	target(at) -"_self"현재 윈도우(default),"_blank"새탭,창[<a href="address" target="_blank">p~e</a>]
+ul(tag) - 순서없는 목록
+li(tag)-
+	[ <ul>
+   	   <li>Coffee</li>
+   	   <li>Tea</li>
+   	   <li>Milk</li>
+  	  </ul>]
+oi(tag) - 순서있는 목록
+	[<ol>
+    	  <li>Coffee</li>
+    	  <li>Tea</li>
+    	  <li>Milk</li>
+   	 </ol>]
+	type(at)-"1","a","A","i","I"순서를 나타내느 문자
+	start(at)-'n' 리스트 시작값
+	reversed(at)-'' 역순[<ol reversed>]
+table(tag)- 표
+tr(tag)-
+td(tag)-
+	border(at)-'n'표 테두리 두께
+	rowspan(at)-'n' 해당 셀이 점유하는 행의 수
+	colspan(at)-'n' 해당 셀이 점유하는 열의 수
+	[ <table>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+    </table>]
+img(tag)-(empty element)이미지 삽입
+	src-'address'이미지 파일경로
+	alt-'word1'이미지 파일이 없을 경우 표시되는 문장
+	width-'n'이미지의 너비
+	height-'n'이미지의 높이
+audio(tag)-오디오 삽입
+	src-'address'오디오 파일경로
+	preload-'element'재생 전에 음악 파일을 모두 불러올 것인지 지정
+	autoplay-''음악 파일을 자동의 재생 개시할 것인지 지정
+	loop-''음악을 반복할 것인지 지정
+	controls-''음악 재생 도구를 표시할 것인지 지정
+video(tag)-비디오 삽입
+	src-'address'동영상 파일 경로
+	poster-'address'동영상 준비 중에 표시될 이미지 파일 경로
+	preload-'element'재생 전에 동영상 파일을 모두 불러올 것인지 지정
+	autoplay-''동영상 파일을 자동의 재생 개시할 것인지 지정
+	loop-''동영상을 반복할 것인지 지정
+	controls-''동영상 재생 도구를 표시할 것인지 지정. 재생 도구의 외관은 브라우저마다 차이가 있다.
+	width-'n'동영상의 너비를 지정
+	height-'n'동영상의 높이를 지정
+form(tag)-입력데이터 수집
+	action-'url' 입력데이터 전송 될 url
+	method-"get","post" 입력 데이터 자료형
+input(tag)- (empty element)데이터 입력 key=value
+	type-'element' 입력 종류
+		text,password,button
+	name-'word1' key값
+	value-'word1' value값
+selct(tag)-선택창 입력	
+	name-'word1' key값
+	size-'n,multiple-'' 선택창확장 유지
+option(tag)-option 생성
+	value-'word1' value값
+optgroup(tag)-option을 그룹화한다
+	label-'word1' 그룹 이름
+	[ <select name="cars3">
+      <optgroup label="Swedish Cars">
+        <option value="volvo">Volvo</option>
+      </optgroup>
+    </select>   ]
+textarea(tag)-여러 줄의 글을 입력
+	name
+	rows-'n' 행길이
+	cols-'n' 열길이
+fieldset(tag)-입력양식 그룹화
+legend(tag)-fieldset 이름
+
+
+
+
+** 
+p~e1,word1,address1,tag1,attribute1,value,n=형식의 임의 값
+3=임의 값
+	
+	
+	
+	
