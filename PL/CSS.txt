@@ -60,6 +60,11 @@ selector-선택요소
       color: red;
     }]
 	::selection	드래그한 콘텐츠를 선택한다. iOS Safari 등 일부 브라우저에서 동작 않는다.
+-@규칙
+	@import url();
+	@font-face {font-family: ; src: url();}
+	@media
+	
 -크기 단위
 	px-1/96 인치
 	%-백분률 단위, 요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈)에 상대적인 사이즈
@@ -76,8 +81,12 @@ selector-선택요소
 	RGBA (Red, Green, Blue, Alpha/투명도)	[rgba(255, 255, 0, 1)]
 	HSL (Hue/색상, Saturation/채도, Lightness/명도)[hsl(0, 100%, 25%)]
 	HSLA (Hue, Saturation, Lightness, Alpha)	[hsla(60, 100%, 50%, 1)]
-
+	gradient
+		linear-gradient(진행방향,색상지정점1,2..)
+		radial-gradient(크기 at 중심정 ,색상지정점1,2...)
+		
 -박스    margin-border-padding-content
+	box-shadow : offset-x | offset-y | blur | color 
 -box
 	display - layout 정의,상속x
 	  block	block 특성을 가지는 요소
@@ -115,22 +124,25 @@ selector-선택요소
 	  space    =반복, 균등 공백
 	  round    =반복, 크기 조절
 -ourline    =margin 외각 박스 두께 영향x
-	outline - '[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]'
+	outline : '[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]'
 	  -
 -글
 	color - 색상'
 	direction - ltr(default), rtl (우측->좌측)
 	letter-spacing - '크기' 글자 사이 간격
 	word-spacing - '크기' 단어 사이 간격
+	word-wrap : break-word
 	text-indent - '크기' 단락 첫줄 들여쓰기
-	text-align -'[left, right, center]' 정렬
+	text-align : '[left, right, center]' 정렬
 	tect-decoration - 'line || color || stylee'
-	  -line - '[none,underline,overline,line-through]'
-	  -style - '[solid,douvle,dotted,dashed,wavy]'
-	text-transform - '[uppercse,lowercase,capitalize]'
-	text-shadow - '[ <color>? <offset-x> <offset-y> <blur-radius>?]'
+	-line : '[none,underline,overline,line-through]'
+	-style : '[solid,douvle,dotted,dashed,wavy]'
+	overflow : visible || hideen
+	-transform : '[uppercse,lowercase,capitalize]'
+	-shadow : '[ <color>? <offset-x> <offset-y> <blur-radius>?]'
+	-overflow : 'clip||ellipsis'
 	line-height - 글자 wnf rksrur(px,공백(p),%,em)
-	vertical - '크기 || symbol etc..' 
+	vertical : '크기 || symbol etc..' 
 -글꼴
 	font-family - ' "글꼴1","글꼴2","글꼴3"  '
 	font-style - 'normal || italic'
@@ -150,6 +162,9 @@ selector-선택요소
 	  no-repeat
 	-position - 'px,%,top,left etc..' 상대 위치
 	-tachment - 'fixed' 배경고정
+	-size : 
+	-orgin
+	-clip
 -list
 	list-style - <'list-style-type'> || <'list-style-position'> || <'list-style-image'>
 	  -type 'disc || circle etc..'
