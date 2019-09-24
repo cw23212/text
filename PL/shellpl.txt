@@ -119,6 +119,8 @@ done
 }
 function 함수이름()
 {
+	echo
 	실행문장
+	exit
 }
 

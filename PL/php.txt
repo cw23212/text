@@ -1,3 +1,83 @@
 **php**
 <meta>
+-인터프리터
+-대소문자
+변수,함수,이름,예약어 구분 안함
+
+-줄구분
+;
+-주석
+--한줄
+//,#
+--여러줄
+/* ... */
+
+-변수(동적타입가변변수$$$$NAME)
+$var
+{$var}...
+--type
+boolean,integer,float,string,array,NULL,resource
+--형변환
+(type)var
+--scope
+--전역
+$GLOBALS['var'] 배열에 저장
+--지역
+global ($GLOBALS[] 배열에전역변수 참조)
+--슈퍼 글로벌
+$GLOBALS  ,$_SERVER  ,$_GET  ,$_POST  ,$_FILES  ,$_COOKIE  ,$_SESSION  ,$_REQUEST  ,$_ENV
+--정적
+static
+-상수
+define(상수이름,상숫값(,대소문자구분여부,defualt false)?)
+--마법상수
+상수 이름	설명
+__LINE__  ,__FILE__  ,__DIR__  ,__FUNCTION__  ,__CLASS__  ,__TRAIT__  ,__METHOD__  ,__NAMESPACE__
+
+-배열(hole,연관배열)
+$name=array( [element1.])? ,("key"=> Value)? );
+
+-산술
++,-,*,/,%,**,.(문자열 덧셈),++,&&,||,?:,+=,==,===,and,xor
+&=,^=
++(arr+arr은 배열 키값 합집합)
+
+-제어문
+if(){}
+else if(){}
+else{}
+switch(){case 1:break;}
+while(),do{}while();,for(;;)
+foreach($arr as $i)
+continue,break
+<?php if,switch,while..(): ?>
+<?php endif;, endswitch;, endwhile;, endfor;, endforeach; ?>
+
+-함수
+function Name($parameter,&$parameter,$defualt=Value,...$args) : (type)?
+{}
+if(){function(){}}<des 선언x>
+function(){
+	innerfunction(){}
+}	<des 함수 호출전까지 innerfunction호출x>
+
+-클랙
+class NAME{
+function NAME(){}}
+
+-구문
+echo(...{1}),echo "..."(,"...")?
+print(), isset(), instanceof
+
 </meta>
+
+<example>
+<?php ... ?>
+</example>
+
+<function>
+var_dump()
+declare(strict_types=1);
+gettype
+</function>
+

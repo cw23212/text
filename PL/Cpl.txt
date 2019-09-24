@@ -22,8 +22,8 @@ type Name[const][const]={{}}
 --타입변화
 (type)Variable
 -연산자
-?:
-sizeof
++,+=,++,&&
+?:,sizeof
 -제어문
 if()
 else if()
@@ -33,6 +33,6 @@ while()
 do{}while();
 continue,break
 -함수
-r-type Name(parmeter){}
+type Name(parmeter){}
 </meta>
 
