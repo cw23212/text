@@ -1,8 +1,9 @@
 **php**
 <meta>
--인터프리터
+-인터프리터, 객체지향
 -대소문자
-변수,함수,이름,예약어 구분 안함
+변수,이름,예약어,클래스 구분
+함수 구분 안함
 
 -줄구분
 ;
@@ -28,8 +29,53 @@ global ($GLOBALS[] 배열에전역변수 참조)
 $GLOBALS  ,$_SERVER  ,$_GET  ,$_POST  ,$_FILES  ,$_COOKIE  ,$_SESSION  ,$_REQUEST  ,$_ENV
 --정적
 static
+--해제
+unset()
+
+-객체
+class Name{}
+--셍성,소멸자
+function __construct(par,...){$this->}
+function __destruct(){}
+--생성
+$Name= new class();
+--접근
+$obj -> prop,method;
+--접근 제어
+default=public
+public
+protected	</des 해당,자식 클래스만>
+--정적 맴버
+static
+class::static_prop
+<exa>
+$var = new StaticMember;
+echo $var->showProperty(); // 호출 가능
+//echo $var->$staticProperty; //호출 불가능
+</exa>
+self,parent
+--상속
+class B extend A implement interface
+---오버라이딩 메소드 재정의
+
+-abstract
+--class
+abstract acess function Name(abstract acess function Name(););
+--method
+abstract acess function Name();
+-interface
+interface Name{function Name();}
+
+-오버로딩
+__set
+__get
+__isset
+__unset
+__call
+__callStatic
+
 -상수
-define(상수이름,상숫값(,대소문자구분여부,defualt false)?)
+define(상수이름,상숫값(,대소문자구분여부,default false)?)
 --마법상수
 상수 이름	설명
 __LINE__  ,__FILE__  ,__DIR__  ,__FUNCTION__  ,__CLASS__  ,__TRAIT__  ,__METHOD__  ,__NAMESPACE__
@@ -54,7 +100,7 @@ continue,break
 <?php endif;, endswitch;, endwhile;, endfor;, endforeach; ?>
 
 -함수
-function Name($parameter,&$parameter,$defualt=Value,...$args) : (type)?
+function Name($parameter,&$parameter,$default=Value,...$args) : (type)?
 {}
 if(){function(){}}<des 선언x>
 function(){
@@ -63,12 +109,14 @@ function(){
 
 -클랙
 class NAME{
-function NAME(){}}
+function NAME(){} }
 
 -구문
 echo(...{1}),echo "..."(,"...")?
 print(), isset(), instanceof
 
+-바인딩
+--Lsb
 </meta>
 
 <example>
@@ -78,6 +126,20 @@ print(), isset(), instanceof
 <function>
 var_dump()
 declare(strict_types=1);
-gettype
+gettype,settype
+is_array,is_int...,isset,empty
+intval,floatval,strval
+#array
+array, count, array_count_value, sort(,[SORT_NUMERIC||SORT_STRING]), ksort, asort, usort, shuffle, array_reverse
+#arraypointer
+current, nextneach, reset, end
+#string
+strlen, mb_strlen, strcmp, strncasecmp, strstr, strchr, explode, impolode, join
+#date
+date([dDjlnswzfmMnoyabghisueopzccru]),mktime,checkdate
+#math
+max,min,floor,ceil,round,abs,rand
+#re
+preg_atch("/pattern/",subject(,matches)?),preg_match_all
 </function>
 
