@@ -119,6 +119,15 @@ print(), isset(), instanceof
 self,parent,static
 --Lsb
 static
+
+-form
+_POST,_GET
+
+-예외
+try{throw 예외객체}
+catch{}
+finally{}
+
 </meta>
 
 <example>
@@ -126,7 +135,7 @@ static
 </example>
 
 <function>
-var_dump()
+var_dump(),print_r
 declare(strict_types=1);
 gettype,settype
 is_array,is_int...,isset,empty
@@ -143,5 +152,25 @@ date([dDjlnswzfmMnoyabghisueopzccru]),mktime,checkdate
 max,min,floor,ceil,round,abs,rand
 #re
 preg_atch("/pattern/",subject(,matches)?),preg_match_all
+filter_var
+<des>
+FILTER_VALIDATE_BOOLEAN	해당 변수가 "1", "true", "on", "yes"인 경우에만 true를 반환하고, 나머지는 전부 false를 반환함.
+FILTER_VALIDATE_EMAIL	해당 변수가 유효한 이메일 주소인지를 검증함.
+FILTER_VALIDATE_FLOAT	해당 변수가 float 타입인지를 검증함.
+FILTER_VALIDATE_INT	해당 변수가 int 타입인지를 검증함.
+FILTER_VALIDATE_IP	해당 변수가 유효한 IP 주소인지를 검증함.
+FILTER_VALIDATE_MAC	해당 변수가 유효한 MAC 주소인지를 검증함.
+FILTER_VALIDATE_REGEXP	해당 변수를 펄 호환 정규 표현식(Perl-Compatible Regular Expression, PCRE)으로 검증함.
+FILTER_VALIDATE_URL 해당 변수가 유효한 URL 주소인지를 검증함.
+</des>
+#file
+fopen(,"[rwaxc+]")
+fgets,feof,fgetc,readfile,fclose
+ftell,rewind,fsekk("",[SEEK_SET,SEEK_CUR,SEEK_END])
+file_exist,filesize,inlink
+#cookie
+setcookie,unset,setcookie
+#session
+session_start,unset
 </function>
 

@@ -119,11 +119,15 @@ video(tag)-비디오 삽입
 form(tag)-입력데이터 수집
 	action-'url' 입력데이터 전송 될 url
 	method-"get","post" 입력 데이터 자료형
+	novalid
 input(tag)- (empty element)데이터 입력 key=value
 	type-'element' 입력 종류
 		text,password,button
 	name-'word1' key값
-	value-'word1' value값
+	value-'word1' value 초기값
+	readonly,disabled,autofocus
+	autocolmplete - "on"
+datalist,keygen,output(tag)
 selct(tag)-선택창 입력	
 	name-'word1' key값
 	size-'n,multiple-'' 선택창확장 유지
