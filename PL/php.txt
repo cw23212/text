@@ -53,7 +53,7 @@ $var = new StaticMember;
 echo $var->showProperty(); // 호출 가능
 //echo $var->$staticProperty; //호출 불가능
 </exa>
-self,parent
+
 --상속
 class B extend A implement interface
 ---오버라이딩 메소드 재정의
@@ -116,7 +116,9 @@ echo(...{1}),echo "..."(,"...")?
 print(), isset(), instanceof
 
 -바인딩
+self,parent,static
 --Lsb
+static
 </meta>
 
 <example>
