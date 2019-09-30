@@ -1,5 +1,113 @@
 **sql**
 https://wikidocs.net/4197
+http://www.dbguide.net/db.db?cmd=view&boardUid=148193&boardConfigUid=9&categoryUid=216&boardIdx=134&boardStep=1
 http://104.197.99.35/phpmyadmin
 <meta>
+-줄 구분
+;
+-대소문자
+테이블,필드 이름 구분
+키워드,명령어,구문 구분 안함
+-주석
+--한줄
+#
+"--"
+-여러줄
+/* ... */
+
+-와일드카드
+*,%,_
+
+-연산
+=,>,<=,!=,<>,^=,+=,DIB,MOD,%,&&,AND,OR,NOT,XOR,!
+BETWEEN a AND b (a <= X <= b)
+IN($1,$2...),NOT IN
+IS NULL
+UNION,UNION ALL,INTERSECT,MINUS
+:=,=
+BINARY
+--패턴매칭
+LIKE,REGEXP
+--alias
+a AS b
+
+-type
+TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT </des 1, 2, 3, 4, 8 B>
+DECIIMAL(M,D) </des 총 자릿수,소수자릿수>, FLOAT(P) </des 정밀도 <=24 FLOAT else DOUBLE> ,FLOAT(M,D), DOUBLE(M,D)
+VARCHAR(N),CHAR(N),[TINY|\20|MEDIUM|LONG]TEXT
+DATE,DATETIME,TIMESTAMP,TIME, YEAR
+BIT(M),BINARY(M),VARBINARY(M),[TINY|\20|MEDIUM|LONG]BLOB
+enum(),set()
+
+-제어문
+CASE $ WHEN $1 THEN RES ... [ELSE RES]? END
+CASE WHEN Condition THEN RES ... [ELSE RES]? END
+IF(Condition,ifture,iffalse)
+IFNULLL(ifnotull,else)
+NULLIF(exp1,exp2) </des 같으면 NULL 다르면 exp1 반환>
+
+-구조
+database - table - column - row 
+
+-제약 조건
+NOT NULL,UNIQE,PRIMARY KEY,FOREIGN KEY,DEFUALT
+</exa CREATE TABLE Test2
+(ParentID INT,
+FOREIGN KEY (ParentID) REFERENCES Test1(ID) ON UPDATE CASCADE);>
 </meta>
+
+-DQL
+--SELECT
+SELECT c_name,... FROM t_name [WHERE Condtion]
+--USE
+USE d_Name
+
+-DML
+--ISNERT
+INSERT INTO [ t_name(c_name,...) ]? VALUES (val,...)
+</des NULL, DEFAULT, AUTO_INCREMENT 키워드가 설정된 필드 생략 가능>
+--UPDATE
+UPDATE t_name SET c_name=$1, ... WHERE Condtion
+--DELETE
+DELETE FROM t_name WHERE Condtion
+
+-DDL
+--CREATE
+CREATE DATABASE Name
+CERATE TABLE Name( c_name type [ constrain ]?,c_name type ... )
+--ALTER
+ALTER DATABASE Name [CHARATER SET || COLLATE]=$
+ALTER TABLE Name
+[
+ADD c_name type [ constrain ]?
+DROP c_name
+MODIFY COLUMN c_name type [ constrain ]?
+]
+--DROP
+DROP DATABASE [IF EXISTS]? d_name
+DROP TABLE [IF EXISTS]? t_name
+--RENAME
+--TRUNCATE
+TURNCATE TABLE t_name
+
+-TCL
+--COMMIT
+--ROLLBACK
+--SAVEPOINT
+
+-DLC
+--GRANT
+--REVOKE
+
+-etc
+--DESCRIBE
+[DESCIBE||DESC] t_name
+--UNSING </dse 문자셋 변경>
+--JOIN
+t_name1 INNER JOIN t_name2 ON Condition
+t_name1 JOIN t_name2 ON Condition
+t_name1 LEFT JOIN t_name2 ON Condition
+t_name1 RIGHT JOIN t_name2 ON Condition
+
+<function>
+BIN,CAST(Expr AS type),CONVERT(Expr [, || USING ] type,encoding)
