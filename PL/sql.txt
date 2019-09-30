@@ -2,4 +2,59 @@
 https://wikidocs.net/4197
 http://104.197.99.35/phpmyadmin
 <meta>
+-줄 구분
+;
+-대소문자
+테이블,필드 이름 구분
+키워드,명령어,구문 구분 안함
+
+-주석
+--한줄
+#
+"--"
+-여러줄
+/* ... */
+
+-tyep
+INT,VARCHAR(N),DATE
+
+-구조
+database - table - column - row 
+
+-제약 조건
+NOT NULL,UNIQE,,PRIMARY KEY,FOREIGN KEY,DEFUALT
 </meta>
+
+-DQL
+--SELECT
+--USE
+USE Database_Name
+-DML
+--ISNERT
+--UPDATE
+--DELETE
+-DDL
+--CREATE
+CREATE DATABASE Name
+CERATE TABLE Name( f_name type,f_name type ... )
+--ALTER
+ALTER DATABASE Name [CHARATER SET || COLLATE]=$
+ALTER TABLE Name
+[
+ADD name type
+DROP name
+MODIFY COLUMN name type
+]
+--DROP
+DROP DATABASE name
+DROP TABLE name
+--RENAME
+--TRUNCATE
+TURNCATE TABLE name
+-TCL
+--COMMIT
+--ROLLBACK
+--SAVEPOINT
+-DLC
+--GRANT
+--REVOKE
