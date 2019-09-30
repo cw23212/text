@@ -15,6 +15,18 @@ http://104.197.99.35/phpmyadmin
 -여러줄
 /* ... */
 
+-기호
+*,
+-구문
+AND,OR,NOT
+WHERE
+-연산
+=,>,<=,!=,<>,^=
+BETWEEN a AND b (a <= X <= b)
+IN($1,$2...),NOT IN
+IS NULL, LIKE
+
+UNION,UNION ALL,INTERSECT,MINUS
 -tyep
 INT,VARCHAR(N),DATE
 
@@ -27,16 +39,23 @@ NOT NULL,UNIQE,,PRIMARY KEY,FOREIGN KEY,DEFUALT
 
 -DQL
 --SELECT
+SELECT c_name,... FROM t_name [WHERE Condtion]
 --USE
-USE Database_Name
+USE d_Name
+
 -DML
 --ISNERT
+INSERT INTO [ t_name(c_name,...) ]? VALUES (val,...)
+</des NULL, DEFAULT, AUTO_INCREMENT 키워드가 설정된 필드 생략 가능>
 --UPDATE
+UPDATE t_name SET c_name=$1, ... WHERE Condtion
 --DELETE
+DELETE FROM t_name WHERE Condtion
+
 -DDL
 --CREATE
 CREATE DATABASE Name
-CERATE TABLE Name( f_name type,f_name type ... )
+CERATE TABLE Name( c_name type,c_name type ... )
 --ALTER
 ALTER DATABASE Name [CHARATER SET || COLLATE]=$
 ALTER TABLE Name
@@ -46,15 +65,17 @@ DROP name
 MODIFY COLUMN name type
 ]
 --DROP
-DROP DATABASE name
-DROP TABLE name
+DROP DATABASE [IF EXISTS]? name
+DROP TABLE [IF EXISTS]? name
 --RENAME
 --TRUNCATE
 TURNCATE TABLE name
+
 -TCL
 --COMMIT
 --ROLLBACK
 --SAVEPOINT
+
 -DLC
 --GRANT
 --REVOKE
