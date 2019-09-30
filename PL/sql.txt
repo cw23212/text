@@ -49,6 +49,9 @@ database - table - column - row
 
 -제약 조건
 NOT NULL,UNIQE,PRIMARY KEY,FOREIGN KEY,DEFUALT
+</exa CREATE TABLE Test2
+(ParentID INT,
+FOREIGN KEY (ParentID) REFERENCES Test1(ID) ON UPDATE CASCADE);>
 </meta>
 
 -DQL
