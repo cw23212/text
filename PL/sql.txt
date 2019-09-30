@@ -28,6 +28,8 @@ UNION,UNION ALL,INTERSECT,MINUS
 BINARY
 --패턴매칭
 LIKE,REGEXP
+--alias
+a AS b
 
 -type
 TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT </des 1, 2, 3, 4, 8 B>
@@ -103,6 +105,9 @@ TURNCATE TABLE t_name
 --UNSING </dse 문자셋 변경>
 --JOIN
 t_name1 INNER JOIN t_name2 ON Condition
+t_name1 JOIN t_name2 ON Condition
+t_name1 LEFT JOIN t_name2 ON Condition
+t_name1 RIGHT JOIN t_name2 ON Condition
 
 <function>
 BIN,CAST(Expr AS type),CONVERT(Expr [, || USING ] type,encoding)
