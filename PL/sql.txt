@@ -101,5 +101,8 @@ TURNCATE TABLE t_name
 --DESCRIBE
 [DESCIBE||DESC] t_name
 --UNSING </dse 문자셋 변경>
+--JOIN
+t_name1 INNER JOIN t_name2 ON Condition
+
 <function>
 BIN,CAST(Expr AS type),CONVERT(Expr [, || USING ] type,encoding)
