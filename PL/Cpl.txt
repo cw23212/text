@@ -39,6 +39,7 @@ type Name(parmeter){}
 --선언
 struct Name{...} [v_Name]? ;
 struct Name v_Name,...;
+strucnt Name={,,...};
 --접근
 v_Name.member
 </meta>
