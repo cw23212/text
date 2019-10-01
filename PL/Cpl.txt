@@ -24,6 +24,7 @@ type Name[const][const]={{}}
 -연산자
 +,+=,++,&&
 ?:,sizeof
+*
 -제어문
 if()
 else if()
@@ -34,5 +35,14 @@ do{}while();
 continue,break
 -함수
 type Name(parmeter){}
+
+-구조체
+--선언
+struct Name{...} [v_Name]? ;
+struct Name v_Name,...;
+strucnt Name={,,...};
+--접근
+v_Name.member
+(*pst).mem == pst->mem
 </meta>
 
