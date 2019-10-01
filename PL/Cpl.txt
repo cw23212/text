@@ -34,5 +34,10 @@ do{}while();
 continue,break
 -함수
 type Name(parmeter){}
+
+-구조체
+--선언
+struct Name{...} [v_Name]? ;
+--
 </meta>
 
