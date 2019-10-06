@@ -1,126 +1,135 @@
 **SEHLL PROGRAMING**
 <meta>
--±âº» ÀÚ·áÇü
-¹®ÀÚ¿­
--ÁÙ ±¸ºÐ
+-ê¸°ë³¸ ìžë£Œí˜•
+ë¬¸ìžì—´
+-ì¤„ êµ¬ë¶„
 \n
--ÁÖ¼®
---ÇÑÁÙ
+-ì£¼ì„
+--í•œì¤„
 #
---ºí·Ï
+--ë¸”ë¡
 :<<'END'
 END
+
+-ì˜µì…˜
+"-x" ë””ë²„ê¹…
+set -x
+...
+set +x
 </meta>
-$[],expr	-¿¬»ê
-' '	-Æ¯¼ö¹®ÀÚÁ¦°Å
-" "	-$,`,\,! Á¦¿Ü
-` `.$()	-¸í·É ´ëÃ¼
--º¯¼ö ´ëÀÀ¹ý
+$[],expr	-ì—°ì‚°
+' '	-íŠ¹ìˆ˜ë¬¸ìžì œê±°
+" "	-$,`,\,! ì œì™¸
+` `.$()	-ëª…ë ¹ ëŒ€ì²´
+&& ì„±ê³µì¸ê²¨ìš°
+|| ì‹¤íŒ¨ì¸ ê²½ìš°
+
+-ë³€ìˆ˜ ëŒ€ì‘ë²•
 $name,${name}
-${name:=value}	-$nameÀÌ nullÀÌ¸é value ÇÒ´ç,¹ÝÈ¯
-${name:+value}	-$nameÀÌ !nullÀÌ¸é value ¹ÝÈ¯
-${name:-value}	-$nameÀÌ nullÀÌ¸é value ¹ÝÈ¯
-${name:?value}	-$nameÀÌ nullÀÌ¸é value ¹ÝÈ¯,error
-${#name}		-$name ±æÀÌ ¹ÝÈ¯
-${#name}		-$name ±æÀÌ ¹ÝÈ¯
-${name:offset(:legth)}	-offset¸¸Å­ »èÁ¦ (lenth¸¸Å­ Ãâ·Â)
+${name:=value}	-$nameì´ nullì´ë©´ value í• ë‹¹,ë°˜í™˜
+${name:+value}	-$nameì´ !nullì´ë©´ value ë°˜í™˜
+${name:-value}	-$nameì´ nullì´ë©´ value ë°˜í™˜
+${name:?value}	-$nameì´ nullì´ë©´ value ë°˜í™˜,error
+${#name}		-$name ê¸¸ì´ ë°˜í™˜
+${#name}		-$name ê¸¸ì´ ë°˜í™˜
+${name:offset(:legth)}	-offsetë§Œí¼ ì‚­ì œ (lenthë§Œí¼ ì¶œë ¥)
 
--ÆÐÅÏºñ±³
-${º¯¼ö#ÆÐÅÏ}	-½ÃÀÛ ºÎºÐ ºÎÅÍ °ÔÀ¸¸¥ ÆÐÅÏºÎºÐ Á¦¿Ü
-${º¯¼ö##ÆÐÅÏ}	-½ÃÀÛ ºÎºÐ ºÎÅÍ Å½¿åÀûÀÎ ÆÐÅÏºÎºÐ Á¦¿Ü
-${º¯¼ö%ÆÐÅÏ}	-³¡ ºÎºÐ ºÎÅÍ °ÔÀ¸¸¥ ÆÐÅÏºÎºÐ Á¦¿Ü
-${º¯¼ö%%ÆÐÅÏ}	-³¡ ºÎºÐ ºÎÅÍ Å½¿åÀûÀÎ ÆÐÅÏºÎºÐ Á¦¿Ü
--¼Ó¼º º¯¼ö
-$0	-¼Ð ½ºÅ©¸³Æ®
-$n	-½ºÅ©¸³Æ®¿¡ ³Ñ°ÜÁø n¹øÂ° ÀÎÀÚ
-$#	-ÀÎÀÚ °³¼ö
-$$	-½ºÅ©¸³Æ® pid
-$*,$@	-½ºÅ©¸³Æ® Àü´ÞµÈ ÀÎÀÚ ÀüÃ¼
-$?	-½ÇÇà°ªÀÌ ¹ÝÈ¯ °ª, Âü °ÅÁþ ¹ÝÈ¯
-$-	-¿É¼Çµé
+-íŒ¨í„´ë¹„êµ
+${ë³€ìˆ˜#íŒ¨í„´}	-ì‹œìž‘ ë¶€ë¶„ ë¶€í„° ê²Œìœ¼ë¥¸ íŒ¨í„´ë¶€ë¶„ ì œì™¸
+${ë³€ìˆ˜##íŒ¨í„´}	-ì‹œìž‘ ë¶€ë¶„ ë¶€í„° íƒìš•ì ì¸ íŒ¨í„´ë¶€ë¶„ ì œì™¸
+${ë³€ìˆ˜%íŒ¨í„´}	-ë ë¶€ë¶„ ë¶€í„° ê²Œìœ¼ë¥¸ íŒ¨í„´ë¶€ë¶„ ì œì™¸
+${ë³€ìˆ˜%%íŒ¨í„´}	-ë ë¶€ë¶„ ë¶€í„° íƒìš•ì ì¸ íŒ¨í„´ë¶€ë¶„ ì œì™¸
+-ì†ì„± ë³€ìˆ˜
+$0	-ì…¸ ìŠ¤í¬ë¦½íŠ¸
+$n	-ìŠ¤í¬ë¦½íŠ¸ì— ë„˜ê²¨ì§„ në²ˆì§¸ ì¸ìž
+$#	-ì¸ìž ê°œìˆ˜
+$$	-ìŠ¤í¬ë¦½íŠ¸ pid
+$*,$@	-ìŠ¤í¬ë¦½íŠ¸ ì „ë‹¬ëœ ì¸ìž ì „ì²´
+$?	-ì‹¤í–‰ê°’ì´ ë°˜í™˜ ê°’, ì°¸ ê±°ì§“ ë°˜í™˜
+$-	-ì˜µì…˜ë“¤
 
--Ç¥Çö½Ä
---¹®ÀÚ¿­ºñ±³
-=~	-Á¤±ÔÇ¥Çö½Ä ºñ±³
+-í‘œí˜„ì‹
+--ë¬¸ìžì—´ë¹„êµ
+=~	-ì •ê·œí‘œí˜„ì‹ ë¹„êµ
 [_ep_]
-[ string ]	-ºó ¹®ÀÚ¿­ÀÌ ¾Æ´Ï¸é Âü
-[ string1 = string2 ]	-°°À¸¸é Âü
-[ string1 != string2 ]	-´Ù¸£¸é Âü
-[ -n string ]	-nullÀÌ ¾Æ´Ï¸é Âü
-[ -z string ]	-nullÀÌ¸é Âü
-[ -a ]	- &&¿¬»ê°ú µ¿ÀÏ and ¿¬»ê
-[ -o ]	- ||¿¬»ê°ú µ¿ÀÏ xor ¿¬»ê
---»ê¼úºñ±³
-[ expr1 -eq expr2 ]	-°ªÀÌ °°À¸¸é Âü
-[ expr1 -ne expr2 ]	-°ªÀÌ °°Áö ¾ÊÀ¸¸é Âü
+[ string ]	-ë¹ˆ ë¬¸ìžì—´ì´ ì•„ë‹ˆë©´ ì°¸
+[ string1 = string2 ]	-ê°™ìœ¼ë©´ ì°¸
+[ string1 != string2 ]	-ë‹¤ë¥´ë©´ ì°¸
+[ -n string ]	-nullì´ ì•„ë‹ˆë©´ ì°¸
+[ -z string ]	-nullì´ë©´ ì°¸
+[ -a ]	- &&ì—°ì‚°ê³¼ ë™ì¼ and ì—°ì‚°
+[ -o ]	- ||ì—°ì‚°ê³¼ ë™ì¼ xor ì—°ì‚°
+--ì‚°ìˆ ë¹„êµ
+[ expr1 -eq expr2 ]	-ê°’ì´ ê°™ìœ¼ë©´ ì°¸
+[ expr1 -ne expr2 ]	-ê°’ì´ ê°™ì§€ ì•Šìœ¼ë©´ ì°¸
 [ expr1 -gt expr2 ]	- '>'
 [ expr1 -ge expr2 ]	- '<='
 [ expr1 -lt expr2 ]	- '<'
 [ expr1 -le expr2 ]	- '<='
-[ ! expr ]	-°ÅÁþÀÌ¸é Âü
+[ ! expr ]	-ê±°ì§“ì´ë©´ ì°¸
 [ expr1 -a expr2 ]	- &&
 [ expr1 -o expr2 ]	- ||
---ÆÄÀÏ Á¶°Ç
+--íŒŒì¼ ì¡°ê±´
 [ -{b,c,d, etc..} FILE ]
-b	-ºí·Ï ´Ùºñ¾Æ½º
-c	-char µð¹ÙÀÌ½º
+b	-ë¸”ë¡ ë‹¤ë¹„ì•„ìŠ¤
+c	-char ë””ë°”ì´ìŠ¤
 d	-dir
 e	-exist
-f	-Á¸ÀçÇÏ°í Á¤±ÔÆÄÀÏÀÌ¸é
-g	-sgid°¡ ÀÖÀ¸¸é
+f	-ì¡´ìž¬í•˜ê³  ì •ê·œíŒŒì¼ì´ë©´
+g	-sgidê°€ ìžˆìœ¼ë©´
 k	-sticky bit
-L	-½Éº¼¸¯
+L	-ì‹¬ë³¼ë¦­
 p	-named pipe
-r,x,w,O,G	-±ÇÇÑÀÌ ÀÖÀ¸¸é
-s	-ºñ¾îÀÖÁö ¾ÊÀ¸¸é
-[ file1 -nt file2 ]	-file1ÀÌ file2 º¸´Ù ÃÖ±Ù
-[ file1 -ot file2 ]	-file1ÀÌ file2 º¸´Ù ¿À·¡µÈ
-[ file1 -ef file2 ]	-file1==file2 ÇÏµå¸µÅ©
+r,x,w,O,G	-ê¶Œí•œì´ ìžˆìœ¼ë©´
+s	-ë¹„ì–´ìžˆì§€ ì•Šìœ¼ë©´
+[ file1 -nt file2 ]	-file1ì´ file2 ë³´ë‹¤ ìµœê·¼
+[ file1 -ot file2 ]	-file1ì´ file2 ë³´ë‹¤ ì˜¤ëž˜ëœ
+[ file1 -ef file2 ]	-file1==file2 í•˜ë“œë§í¬
 
--Á¶°Ç¹®
+-ì¡°ê±´ë¬¸
 --if
-if\0[\0Á¶°Ç\0]
+if\0[\0ì¡°ê±´\0]
 then
-	½ÇÇà¹®Àå
-elfi\0[\0Á¶°Ç\0]
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
+elfi\0[\0ì¡°ê±´\0]
+	ì‹¤í–‰ë¬¸ìž¥
 else
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
 fi
 --case
-case ¹®ÀÚ¿­ in
-	ÆÐÅÏ) ½ÇÇà¹®Àå;;
-	ÆÐÅÏ) ½ÇÇà¹®Àå;;
+case ë¬¸ìžì—´ in
+	íŒ¨í„´) ì‹¤í–‰ë¬¸ìž¥;;
+	íŒ¨í„´) ì‹¤í–‰ë¬¸ìž¥;;
 esac
 --select
-select º¯¼ö in °ª1 °ª2 °ª3 ..
+select ë³€ìˆ˜ in ê°’1 ê°’2 ê°’3 ..
 do
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
 done
 -for
-for º¯¼ö in °ª1 °ª2 ..
+for ë³€ìˆ˜ in ê°’1 ê°’2 ..
 do
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
 done
 --while
-while [ Á¶°Ç¹® ]
+while [ ì¡°ê±´ë¬¸ ]
 do
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
 done
 --until
-until [ Á¶°Ç¹® ]
+until [ ì¡°ê±´ë¬¸ ]
 do
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
 done
--ÇÔ¼ö
-ÇÔ¼öÀÌ¸§()
+-í•¨ìˆ˜
+í•¨ìˆ˜ì´ë¦„()
 {
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
 }
-function ÇÔ¼öÀÌ¸§()
+function í•¨ìˆ˜ì´ë¦„()
 {
 	echo
-	½ÇÇà¹®Àå
+	ì‹¤í–‰ë¬¸ìž¥
 	exit
 }
 

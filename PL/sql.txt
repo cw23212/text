@@ -50,7 +50,7 @@ NULLIF(exp1,exp2) </des 같으면 NULL 다르면 exp1 반환>
 database - table - column - row 
 
 -제약 조건
-NOT NULL,UNIQE,PRIMARY KEY,FOREIGN KEY,DEFUALT
+NOT NULL,UNIUQE,PRIMARY KEY,FOREIGN KEY,DEFUALT
 </exa CREATE TABLE Test2
 (ParentID INT,
 FOREIGN KEY (ParentID) REFERENCES Test1(ID) ON UPDATE CASCADE);>
@@ -75,17 +75,24 @@ DELETE FROM t_name WHERE Condtion
 --CREATE
 CREATE DATABASE Name
 CERATE TABLE Name( c_name type [ constrain ]?,c_name type ... )
+CREATE VIEW	 v_name AS [ SELECT .. FROM ... ]
+CREATE OR REPLACE VIEW	 v_name AS [ SELECT .. FROM ... ]
 --ALTER
 ALTER DATABASE Name [CHARATER SET || COLLATE]=$
 ALTER TABLE Name
 [
 ADD c_name type [ constrain ]?
+ADD [INDEX | UNIQUE | FULLTEXT] i_name(f_name...)
 DROP c_name
 MODIFY COLUMN c_name type [ constrain ]?
+DROP INDEX i)name
 ]
+ALTER VIEW v_name AS [ SELECT ... FROM ... ]
 --DROP
 DROP DATABASE [IF EXISTS]? d_name
 DROP TABLE [IF EXISTS]? t_name
+DROP INDEX i_name ON t_name
+DROP VIEW v_name
 --RENAME
 --TRUNCATE
 TURNCATE TABLE t_name
@@ -111,3 +118,5 @@ t_name1 RIGHT JOIN t_name2 ON Condition
 
 <function>
 BIN,CAST(Expr AS type),CONVERT(Expr [, || USING ] type,encoding)
+LENGTH,CONCAT,LOCATE,LEFT,RIGHT,REPLACE,TRIM([ _ || ([ LEADING || TRAILING ] "..." FROM) ]"...")
+FORMAT,FLOOR,CEIL,ROUND,ABS,RAND
