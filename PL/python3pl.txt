@@ -19,6 +19,7 @@ for i in
 a(True) if 조건 else b(False)
 def NAME():
 class NAME:
+del
 </control statment>
 
 <function>
