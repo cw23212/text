@@ -2,6 +2,7 @@
 <meta>
 -기본 자료형
 동적언어(숫자,문자열,리스트("[]"),튜플("()"),딕셔너리("{}"),집합("{}")
+대소문자 구분
 -줄 구분
 \n,\t
 -주석
@@ -26,5 +27,52 @@ del
 <built-in>
 open(),list()
 </built-in>
-
 </function>
+<module>
+##numpy
+<!--
+-numpy.
+array(object, dtype=None, copy=True, order='K', subok=False, ndmin=0)
+arry(/[list || ndarray]/)
+zeros(tuple(size)),ones(tuple(size)),arange([start,] stop[, step,], dtype=None)
+random.randn(),random.rand()
+abs(),sqrt(),square(),ecp(),log,log10,log2,sign,ceil,floor,isnan,isinf,cos,rnah
+muliply,add,subtract,divide,dot
+maximum,minimum
+sum(obj[,axis=N]),mean,std,var,min,max,argmin,argmax,cumsum,cumprod,sort(obj[,axis=N])
+
+-class
+numpy.ndarray
+--object
+dot()
+--연산
+같은크기 +,-,*,/
+broadcast
+--indexing
+slicing
+list( int, boolean )
+--mask
+(ndarray==val)
+--자료형
+b,i[1248],u[1248],f[1248],c[1248],0,S,U
+-->
+
+##pands
+<!--
+-pands.
+Seires(data=None, index=None, dtype=None, name=None, copy=False, fastpath=False)
+-class
+pandas.core.series.Series
+--object
+values,index[.name],dtype,name
+
+pandas.core.frame.DataFrame
+--object
+index[.name],columns[.name],values
+describe()
+--indexing
+
+-->
+
+
+</module>
