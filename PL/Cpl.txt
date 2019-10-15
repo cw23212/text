@@ -35,6 +35,8 @@ do{}while();
 continue,break
 -함수
 type Name(parmeter){}
+--type
+void,void *
 
 -구조체
 --선언
@@ -46,3 +48,15 @@ v_Name.member
 (*pst).mem == pst->mem
 </meta>
 
+-동적할당
+(type *)malloc(size)
+free
+
+<function>
+##stdio.h
+printf
+##stdlib.h
+
+##string.h
+strcmp,strcpy,strtok
+</function>
