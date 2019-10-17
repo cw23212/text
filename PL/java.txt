@@ -1,14 +1,57 @@
-**python3**
+**JAVA**
 <meta>
 -기본 자료형
-동적언어(숫자,문자열,리스트("[]"),튜플("()"),딕셔너리("{}"),집합("{}")
+byte, short, int, long, float, double, char, boolean
+final</des constant>
 대소문자 구분
+--타입변화
+literal[L|l|F|f|D|d]
+(type)variable
 -줄 구분
-\n,\t
+;
 -주석
 --한줄
-#
+//
 --블록
-'''
-'''
+/*...[//]?*/
+--연산자
++-*/%||&&,?:,+=,++,<=
+--구문
+instanceof
+--제어문
+if(){}
+else if()
+else{}
+switch(){
+case v1:break;}
+while(){}
+do{}while();
+for(;;){}
+for(:)
+continue,break
+---라벨
+labelNAme:
+break labelNAme;
+-배열
+type [] v1;
+v1=new type[]/[{}]?/;
+type [][]=v1[]
+
+--method(오버로딩)
+접근제어자 반환타입 메소드이름(매개변수목록){}
+-클래스
+접근제어자 class Name{Name(){}}
+--생성자
+className(this.v1;)
+--main
+public static void main(String[] args) {...}
 </meta>
+
+<class>
+##System
+in,out[.println,print],err\arrcopy
+##Array
+copyOf
+##Object
+copy
+</class>
