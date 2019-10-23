@@ -2,7 +2,9 @@
 <meta>
 -기본 자료형
 byte, short, int, long, float, double, char, boolean
-final</des constant>
+final </des constant, 오버라이딩 x>
+static </메소드, 필드, 초기화 블록>
+abstract </클래스, 메소드>
 대소문자 구분
 --타입변화
 literal[L|l|F|f|D|d]
@@ -18,6 +20,9 @@ literal[L|l|F|f|D|d]
 +-*/%||&&,?:,+=,++,<=
 --구문
 instanceof
+import package....class</ * all>
+enum Name{Name(var),..;};
+
 --제어문
 if(){}
 else if()
@@ -33,25 +38,69 @@ continue,break
 labelNAme:
 break labelNAme;
 -배열
-type [] v1;
-v1=new type[]/[{}]?/;
-type [][]=v1[]
+type [] v1 / ={v1,v2..} /? ;
+v1=new type[]/ [] /?;
+type [][] v1, type v1[][] , type [] v1 []
 
 --method(오버로딩)
 접근제어자 반환타입 메소드이름(매개변수목록){}
+
 -클래스
 접근제어자 class Name{Name(){}}
 --생성자
-className(this.v1;)
+className(par..){this.v1;}
+this() </ 생성자 호출>
+{} </ 초기화 블록>
+클래스 변수 : 기본값 → 명시적 초기화 → 클래스 초기화 블록
+인스턴스 : 기본값 → 명시적 초기화 → 인스턴스 초기화 블록 → 생성자
+--상속(오버라이딩)
+class Name extend ParentName{}
+--키워드
+this, super 
+super() </ 부모 클래스 생성자>
+--추상 클래스
+modifier abstract class Name{
+abstract returntype Name();}
+--인터페이스
+modifier interfave Name [ extends interfaceName ] {
+[public static final] type Name;
+[public abstract] Method();}
+--익명클래스
+className Name = new ClassName(){}
+
 --main
-public static void main(String[] args) {...}
+public class FileName{
+public static void main(String[] args) {...}}
+
+
+-modifer
+private - 선언한 클래스 내에서만
+public - 공개
+default - 같은 패키지의 클래스, 자식 
+protected 같은 패키지의 클래스, 자식 + 다른 패키지 자식
+
+-패키지
+package Name
 </meta>
 
 <class>
+##java.lang
+String, StringBuffer, Process, Runtime, Thread, Math, Strict, Math, Exception Throwable, Error, Package, Class, ClassLoader, Wrapper, System, Stream
 ##System
 in,out[.println,print],err\arrcopy
 ##Array
 copyOf
 ##Object
-copy
+copy,toString,equals
+##String
+charAt,compareTo,concat,indexOf,trim
+##StringBuffer
+##Math
+random(),abs,round,max,min
+E,PI
+##java.util.Arrays
+binarySearch(),copyOf,fill,sort
+##java.util.Calendar
+
+
 </class>
