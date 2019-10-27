@@ -79,6 +79,11 @@ public - 공개
 default - 같은 패키지의 클래스, 자식 
 protected 같은 패키지의 클래스, 자식 + 다른 패키지 자식
 
+-generic
+class Name<T>{
+T v1;
+}
+
 -패키지
 package Name
 </meta>

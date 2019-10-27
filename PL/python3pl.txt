@@ -81,7 +81,7 @@ sum(),count ,min, max ,argmin, argmax ,idxmin, idxmax ,quantile ,sum ,mean ,medi
 cor(),cov()
 sort_index,sort_values,unique,apply
 --indexing
-obj[[ columns:columns || [col1,col2,..] || columns] ]
+obj[ [ columns:columns || [col1,col2,..] || columns] ]
 obj.columns
 obj[rowsN:rowsN]
 obj.loc[rows], obj.loc[row:row[,columns[:columns]]]
