@@ -38,10 +38,11 @@ open(),list()
 -numpy.
 array(object, dtype=None, copy=True, order='K', subok=False, ndmin=0)
 arry(/[list || ndarray]/)
+shape,dtype
 zeros(tuple(size)),ones(tuple(size)),arange([start,] stop[, step,], dtype=None)
 random.randn(),random.rand()
-abs(),sqrt(),square(),ecp(),log,log10,log2,sign,ceil,floor,isnan,isinf,cos,rnah
-muliply,add,subtract,divide,dot
+abs(),sqrt,square,ecp,log,log10,log2,sign,ceil,floor,isnan,isinf,cos,rnah
+muliply(),add,subtract,divide,dot
 maximum,minimum
 sum(obj[,axis=N]),mean,std,var,min,max,argmin,argmax,cumsum,cumprod,sort(obj[,axis=N])
 nan,
@@ -65,6 +66,7 @@ b,i[1248],u[1248],f[1248],c[1248],0,S,U
 <!--
 -pands.
 Seires(data=None, index=None, dtype=None, name=None, copy=False, fastpath=False)
+astype(),plot
 -class
 pandas.core.series.Series
 --object
@@ -75,7 +77,7 @@ DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
 pandas.core.frame.DataFrame
 --object
 index[.name],columns[.name],values,reindex
-describe(),loc,iloc,date_range
+describe(),loc,iloc,date_range,astype,plot
 dropna(axis=0, how='any', thresh=None, subset=None, inplace=False),fillna,isnull,drop,isin
 sum(),count ,min, max ,argmin, argmax ,idxmin, idxmax ,quantile ,sum ,mean ,median ,mad ,std, var ,cumsum ,cumprod
 cor(),cov()

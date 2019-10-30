@@ -54,7 +54,7 @@ this() </ 생성자 호출>
 클래스 변수 : 기본값 → 명시적 초기화 → 클래스 초기화 블록
 인스턴스 : 기본값 → 명시적 초기화 → 인스턴스 초기화 블록 → 생성자
 --상속(오버라이딩)
-class Name extend ParentName{}
+class Name extends ParentName{}
 --키워드
 this, super 
 super() </ 부모 클래스 생성자>
@@ -80,9 +80,16 @@ default - 같은 패키지의 클래스, 자식
 protected 같은 패키지의 클래스, 자식 + 다른 패키지 자식
 
 -generic
-class Name<T>{
+class Name<T1 [extends Class (&)? Interface ]?,...>{
 T v1;
 }
+<T> R-type M-Name(){} 
+--생성
+Name<Type,...> v1=new Name<Type>();
+--와일들카드
+<?>
+<? extends T>
+<? super T .
 
 -패키지
 package Name
