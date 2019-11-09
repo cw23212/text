@@ -96,7 +96,7 @@ package Name
 </meta>
 
 <class>
-##java.lang
+##java.lang </des 기본 ,import X>
 String, StringBuffer, Process, Runtime, Thread, Math, Strict, Math, Exception Throwable, Error, Package, Class, ClassLoader, Wrapper, System, Stream
 ##System
 in,out[.println,print],err\arrcopy

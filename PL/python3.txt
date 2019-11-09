@@ -71,6 +71,7 @@ astype(),plot
 pandas.core.series.Series
 --object
 values,index[.name],dtype,name
+std(),max
 
 DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
 --class
