@@ -15,6 +15,8 @@
 ','
 " '.' "
 ' "." '
+-상수
+None
 </meta>
 
 <control statment>
@@ -24,6 +26,7 @@ for i in
 a(True) if 조건 else b(False)
 def NAME():
 class NAME:
+lambda par : exp
 del
 </control statment>
 

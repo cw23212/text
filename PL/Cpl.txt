@@ -32,6 +32,7 @@ else
 switch(){case:}
 while()
 do{}while();
+for(;;){}
 continue,break
 -함수
 type Name(parmeter){}
@@ -52,6 +53,22 @@ v_Name.member
 (type *)malloc(size)
 free
 
+-상수
+NULL
+
+-타입 접미사
+l, L	long
+u, U	unsigned int
+ul, UL	unsigned long
+ll, LL	long long
+ull, ULL	unsigned long long
+f, F	float
+l, L	long double
+-접두사
+0B binaray
+0 octal
+0X hexa
+</meata>
 <function>
 ##stdio.h
 printf

@@ -1,0 +1,50 @@
+**CPP**
+<meta>
+-기본 자료형
+int,char,double,bool,auto..
+int*,char*..
+Type Name[=Var];
+대소문자 구분
+
+--타입변화
+(type)var
+-줄 구분
+;
+-주석
+--한줄
+//
+--블록
+/*...[//]?*/
+--연산자
++-*/,++,&,&&,+=
+?:,sizeof,::,typeid
+
+-배열
+type Name[] [ ={} ]?
+
+-구문
+using namespace Name;
+const
+type * p=new Type
+delete p
+
+-제어문
+if()
+else if()
+else
+switch(){case:}
+while()
+do{}while();
+continue,break
+for(;;){}
+for(i : arr){}
+
+-상수
+NULL
+--stdo
+std::cout<<;
+</meta>
+
+<class>
+
+</class>
