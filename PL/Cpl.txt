@@ -13,10 +13,14 @@ int,char,double..
 -변수(정적)
 const </des 상수>
 static 	</des 전역>
-unsigned
+unsigned,register
 char,int,short,long,long long
 float,double, long double
 *
+const type* name --변수 상수화
+type* const name --포인터 상수화
+type (*name)(par..); --함수 포인터
+
 --배열
 type Name[const][const]={{}}
 --타입변화
@@ -44,6 +48,7 @@ void,void *
 struct Name{...} [v_Name]? ;
 struct Name v_Name,...;
 strucnt Name={,,...};
+typedef strcut [name]{}Name;
 --접근
 v_Name.member
 (*pst).mem == pst->mem

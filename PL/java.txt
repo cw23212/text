@@ -91,6 +91,18 @@ Name<Type,...> v1=new Name<Type>();
 <? extends T>
 <? super T .
 
+-어노테이션
+@Override
+@Deprecated
+@SuppressWarnings
+@FunctionalInterface
+
+-lambda
+(par..) -> { body | body return var; }
+--함수형 인터페이스
+@FunctionalInterface
+interface Calc {public int Name(par..);}
+
 -패키지
 package Name
 </meta>

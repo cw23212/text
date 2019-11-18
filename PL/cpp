@@ -19,15 +19,49 @@ Type Name[=Var];
 +-*/,++,&,&&,+=
 ?:,sizeof,::,typeid
 
+-변수(정적)
+const </des 상수>
+static 	</des 전역>
+unsigned,register
+char,int,short,long,long long
+float,double, long double
+*,&
+const type* name --변수 상수화
+type* const name --포인터 상수화
+type (*name)(par..); --함수 포인터
+extern
+
 -배열
 type Name[] [ ={} ]?
 
 -구문
-using namespace Name;
-const
+using Namespace Name;
+using Namespace::Nmae;
 type * p=new Type
 delete p
+struct Name{};
+enum Name{}
+typedef type name
+usnig name=type
+auto
+inline
 
+-객체
+class name{
+type name;
+public:
+type name;
+type name(){};
+}
+type classname::name(){};
+--선언
+classname Name;
+--접근
+classname.mem
+
+-구조체
+--접근
+structN.mem
 -제어문
 if()
 else if()
@@ -38,6 +72,10 @@ do{}while();
 continue,break
 for(;;){}
 for(i : arr){}
+
+-함수 (오버로딩)
+type Name(par,defa=default){}
+inline type Name(){}
 
 -상수
 NULL
