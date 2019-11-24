@@ -119,6 +119,9 @@ t_name1 JOIN t_name2 ON Condition
 t_name1 LEFT JOIN t_name2 ON Condition
 t_name1 RIGHT JOIN t_name2 ON Condition
 
+-연산자
+|| 
+
 <function>
 BIN,CAST(Expr AS type),CONVERT(Expr [, || USING ] type,encoding)
 LENGTH,CONCAT,LOCATE,LEFT,RIGHT,REPLACE,TRIM([ _ || ([ LEADING || TRAILING ] "..." FROM) ]"...")

@@ -59,10 +59,10 @@ class Name extends ParentName{}
 this, super 
 super() </ 부모 클래스 생성자>
 --추상 클래스
-modifier abstract class Name{
+access abstract class Name{
 abstract returntype Name();}
 --인터페이스
-modifier interfave Name [ extends interfaceName ] {
+access interfave Name [ extends interfaceName ] {
 [public static final] type Name;
 [public abstract] Method();}
 --익명클래스
@@ -73,7 +73,7 @@ public class FileName{
 public static void main(String[] args) {...}}
 
 
--modifer
+-access
 private - 선언한 클래스 내에서만
 public - 공개
 default - 같은 패키지의 클래스, 자식 

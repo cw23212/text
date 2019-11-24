@@ -21,7 +21,7 @@ Type Name[=Var];
 
 -변수(정적)
 const </des 상수>
-static 	</des 전역>
+static 	</des 정적>
 unsigned,register
 char,int,short,long,long long
 float,double, long double
@@ -52,16 +52,26 @@ type name;
 public:
 type name;
 type name(){};
+public:
+	name(){} </des 생성자>
+	~name(){}  </des 소멸자>
 }
 type classname::name(){};
 --선언
 classname Name;
 --접근
 classname.mem
+--상속 	</des 생성자 필수, 접근제어자 private 기본 >
+class Name : access classname{
+public:
+	Nmae() : classname(){}
+}
 
 -구조체
+struct name{};
 --접근
 structN.mem
+
 -제어문
 if()
 else if()
@@ -75,7 +85,24 @@ for(i : arr){}
 
 -함수 (오버로딩)
 type Name(par,defa=default){}
+type Name const(){} </des 멤버 읽기 전용>
 inline type Name(){}
+--전방 선언
+type Name();
+class name;
+
+-연산자 오버로딩
+type operator연산자(){ return }
+-프렌트
+friend type functionName(par..);
+friend class classname
+friend type functionName();
+
+-access
+private - 선언한 클래스 내에서만
+public - 공개
+default - 같은 패키지의 클래스, 자식 
+protected 같은 패키지의 클래스, 자식 + 다른 패키지 자식
 
 -상수
 NULL
