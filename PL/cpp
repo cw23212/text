@@ -54,18 +54,24 @@ type name;
 type name(){};
 public:
 	name(){} </des 생성자>
-	~name(){}  </des 소멸자>
+	~name(){}  </des 소멸자, 파생클래스 일 경우 가상함수>
 }
 type classname::name(){};
 --선언
 classname Name;
 --접근
 classname.mem
---상속 	</des 생성자 필수, 접근제어자 private 기본 >
-class Name : access classname{
+--상속 	</des 생성자 필수,파생클래스 >
+class Name : [access=private] classname{
 public:
 	Nmae() : classname(){}
 }
+-함수(오버라이딩)
+Instance.baseClass::method() </des 오버라이딩된 상속 함수 호출>
+--가상함수
+virtual type Name(){}
+--수수 가상 함수, 추상클래스
+virtual type name()=0;
 
 -구조체
 struct name{};
@@ -97,6 +103,12 @@ type operator연산자(){ return }
 friend type functionName(par..);
 friend class classname
 friend type functionName();
+
+-템플릿
+template <typename Name = defaulttype,...> type Name(){}
+template <typename Name> class Nmae{}
+--명시적 특수화
+template <> type Name(){};
 
 -access
 private - 선언한 클래스 내에서만
