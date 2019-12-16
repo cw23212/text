@@ -19,7 +19,7 @@ float,double, long double
 *
 const type* name --변수 상수화
 type* const name --포인터 상수화
-type (*name)(par..); --함수 포인터
+returnType (*name)(par..); --함수 포인터
 
 --배열
 type Name[const][const]={{}}
@@ -42,6 +42,8 @@ continue,break
 type Name(parmeter){}
 --type
 void,void *
+--인라인함수
+inline type Name(){}
 
 -구조체
 --선언
@@ -57,6 +59,16 @@ v_Name.member
 -동적할당
 (type *)malloc(size)
 free
+
+-구문
+#include""
+#include<>
+#define Name [val]?
+#if #ifdef #ifndef #else #elif #endif
+typedef type Name;
+typedef functionPointer;
+typedef type arrays[N];
+volatile
 
 -상수
 NULL

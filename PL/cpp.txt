@@ -105,10 +105,18 @@ friend class classname
 friend type functionName();
 
 -템플릿
-template <typename Name = defaulttype,...> type Name(){}
+template <typename Name = defaulttype,type Name...> type Name(){}
 template <typename Name> class Nmae{}
 --명시적 특수화
 template <> type Name(){};
+
+-컨테이너
+--시퀀스
+vetctor, deque, list, forward_list
+--associate
+set,multiset,map,multimap
+--어댑터
+stack,queue,priority_queue
 
 -access
 private - 선언한 클래스 내에서만
@@ -125,3 +133,9 @@ std::cout<<;
 <class>
 
 </class>
+<headaer>
+##vetctor
+##list
+##deque
+##functional 
+</headaer>
