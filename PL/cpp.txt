@@ -20,16 +20,17 @@ Type Name[=Var];
 ?:,sizeof,::,typeid
 
 -변수(정적)
-const </des 상수>
-static 	</des 정적>
 unsigned,register
 char,int,short,long,long long
 float,double, long double
+-
 *,&
 const type* name --변수 상수화
 type* const name --포인터 상수화
 type (*name)(par..); --함수 포인터
-extern
+const </des 상수>
+static 	</des 정적>
+mutable
 
 -배열
 type Name[] [ ={} ]?
@@ -39,12 +40,21 @@ using Namespace Name;
 using Namespace::Nmae;
 type * p=new Type
 delete p
+delete[] p
 struct Name{};
 enum Name{}
 typedef type name
 usnig name=type
-auto
 inline
+extern
+#include""
+#include<>
+#define Name [val]?
+#if #ifdef #ifndef #else #elif #endif
+typedef type Name;
+typedef functionPointer;
+typedef type arrays[N];
+volatile
 
 -객체
 class name{
@@ -53,7 +63,7 @@ public:
 type name;
 type name(){};
 public:
-	name(){} </des 생성자>
+	[explicit]? name(){} </des 생성자>
 	~name(){}  </des 소멸자, 파생클래스 일 경우 가상함수>
 }
 type classname::name(){};
@@ -133,6 +143,7 @@ std::cout<<;
 <class>
 
 </class>
+
 <headaer>
 ##vetctor
 ##list

@@ -1,7 +1,8 @@
 **C language**
-<meta>
 -기본 자료형
 int,char,double..
+char,int,short,long,long long
+float,double, long double
 -줄 구분
 ;
 -주석
@@ -14,9 +15,7 @@ int,char,double..
 const </des 상수>
 static 	</des 전역>
 unsigned,register
-char,int,short,long,long long
-float,double, long double
-*
+type *
 const type* name --변수 상수화
 type* const name --포인터 상수화
 returnType (*name)(par..); --함수 포인터
@@ -54,7 +53,6 @@ typedef strcut [name]{}Name;
 --접근
 v_Name.member
 (*pst).mem == pst->mem
-</meta>
 
 -동적할당
 (type *)malloc(size)
@@ -86,6 +84,7 @@ l, L	long double
 0 octal
 0X hexa
 </meata>
+
 <function>
 ##stdio.h
 printf

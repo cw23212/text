@@ -31,7 +31,6 @@ ${name:+value}	-$name이 !null이면 value 반환
 ${name:-value}	-$name이 null이면 value 반환
 ${name:?value}	-$name이 null이면 value 반환,error
 ${#name}		-$name 길이 반환
-${#name}		-$name 길이 반환
 ${name:offset(:legth)}	-offset만큼 삭제 (lenth만큼 출력)
 
 -패턴비교

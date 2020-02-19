@@ -1,0 +1,66 @@
+**c#**
+<meta>
+-기본 자료형
+bool,byte,sbyte,int,,long,ushort,char,string
+type? </ nullable type Nullable<T> >
+대소문자 구분
+--타입변화
+literal[L|U|UL|F|D|M]
+-줄 구분
+;
+-주석
+--한줄
+//
+--블록
+/* */
+-연산자
++-,+=,++,&&,?,??</ 앞의 par가 null이면>
+-구문
+const,readonly
+yeild return var, yeild break; ++++추가
+using NameSpace,namespace Name{class..}
+-배열
+type[] var = new type[]; 
+type[,,] var = new type[]; </ 가변 배열>
+
+-제어문
+if(){}else if(){}else{}
+switch(){case var:;brea;default:;break;}
+for(;;){}
+foreach(i in array){}
+while(){}
+do{}while();
+try{}catch(Exception ex){}catch{throw;}finally{}
+
+-클래스
+[partial] class CName{
+public Name(){}//생성자
+public Attribute{}//속성
+MA type var//필드
+MA return Name(){}//메소드
+public event EventHandler EName;
+}
+--이벤트
+CName.Ename += new EventHandler(EFun);
+type EFun(object v1,EventArgs e){}
+class Name{
+private EventHandler _EName;
+public event EventHandler EName{
+add{_EName += }
+remove{}
+}}
+
+-함수
+type FName(ref type p1,out type p2,type p3 [=val],params type[] Name){}
+FName(v1,p2:v2)
+--구조체
+struct Name{}
+--열거형
+enum Name{}
+[Flags]; enum Name{a=0,b=1,c=2..} </ 비트 연산>
+
+-상수
+null
+
+***class
+System.Text.StringBuilder

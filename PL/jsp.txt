@@ -1,0 +1,53 @@
+**jsp**
+<meta>
+-줄 구분
+;
+
+-주석
+---JSP
+<%-- -->
+---html
+<!-- -->
+---java
+--한줄
+//
+--블록
+/*...[//]?*/
+
+-연산자
++-*/%||&&,?:,+=,++,<=
+
+-선언문 </ 페이지 내의 전역>
+<%! val or method %>
+-스크립트릿 </ 지역 변수>
+<% %>
+
+-표현식
+<%=%>
+
+-지시자
+<%@  attr=val %>
+--page
+Info,language,contentType,extends,import
+session,buffer,autoFlush,errorPage,pageEncoding
+--include </ 파일 그대로>
+file
+--taglib 
+
+-액션태그
+<jsp:include /> 
+page,flush
+<jsp:forward page="" />
+<jsp:forward page=""> 
+	<jsp:param name=" value=" />
+	<jsp:param name=" value=" />
+</jsp:forward>
+<jsp:useBean /> 
+id(bean name),class(class name)
+<jsp:setProperty /> 
+name(bean name),property(member name),value
+<jsp:getProperty /> 
+name,property
+
+
+

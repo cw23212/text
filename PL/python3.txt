@@ -25,16 +25,15 @@ while
 for i in
 a(True) if 조건 else b(False)
 def NAME():
-class NAME:
+class NAME[(parentClass)]:
 lambda par : exp
 del
 </control statment>
 
-<function>
 <built-in>
 open(),list()
 </built-in>
-</function>
+
 <module>
 ##numpy
 <!--
