@@ -3,6 +3,7 @@
 -기본 자료형
 bool,byte,sbyte,int,,long,ushort,char,string
 type? </ nullable type Nullable<T> >
+var </ 암시적 타입 지역 변수>
 대소문자 구분
 --타입변화
 literal[L|U|UL|F|D|M]
@@ -20,7 +21,7 @@ const,readonly
 yeild return var, yeild break; ++++추가
 using NameSpace,namespace Name{class..}
 -배열
-type[] var = new type[]; 
+type[] var = new type[] [{...}]; 
 type[,,] var = new type[]; </ 가변 배열>
 
 -제어문
