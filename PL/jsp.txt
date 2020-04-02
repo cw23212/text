@@ -49,5 +49,218 @@ name(bean name),property(member name),value
 <jsp:getProperty /> 
 name,property
 
+-web.xml
+<sevrlet>
+	<servlet-name>aliasName</servlet-name>
+	<servlet-class>package.servlet</servlet-class>
+</servlet>
+<sevrlet-mapping>
+	<servlet-name>aliasName</servlet-name>
+	<url-pattern>/mappingName</url-pattern>
+</servlet-mapping>
 
 
+**********
+**SPRING**
+
+-project folder
+prj:\
+[src:main:[java:GId:code,resources:[appCtx.xml,,],\
+target:[,,,],\
+pom.xml]
+
+-appCtx.xml
+--default
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd">
+</beans>
+--context Autowired
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd 
+ 		http://www.springframework.org/schema/context 
+ 		http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:annotation-config />
+</beans>
+--컨테이너 생성
+GenericXmlApplicationContext(String[])</ etc="classpath:appCtx.xml">
+--구문
+<bean id="" class="" [init-method="" destroy-method=""]? />
+<bean id="" class=""><constructor-arg ref="" /></bean>
+<import resource=""/>
+--qualifier
+<bean id="" class=""><qualifier value="qualifier"/></bean>
+
+-appCtx.java
+[@Import(,,,)]?
+@Configuration
+public class ClassName{
+@Bean
+public ClassType IdName(){
+Classtype tmp=new ClassType();return tmp;}}
+--service </ 빈>
+@Service
+@Component
+@Repository
+--컨테이너 생성
+AnnotationConfigApplicationContext(,,)
+
+
+-jspClass.java
+@Autowired </ 같은 타입 자동 주입, 생성자, 프로퍼티, 함수, ==@inject>
+@Resource </ 같은 이름 자동 주입, 프로퍼티, 함수>
+@Qualifier("qualifier")
+
+-web.xml
+<servlet>
+	<servlet-name>appServlet</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<init-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value> //default:appServlet-context.xml
+	</init-param>
+	<load-on-startup>1</load-on-startup>
+</servlet>	
+<servlet-mapping>
+	<servlet-name>appServlet</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
+
+--servletcontext.xml
+<annotation-driven />
+
+
+--controlerClass.java
+[@RequestMapping("") </ urlmapping>
+@ModelAttribute("")</ 컨트롤러 실행시 같이 호출 >]?
+@Controller
+public class ClassName(){
+	@RequestMapping(value = "/*", method = RequestMethod.POST </ default=GET>)
+	public String home(Locale locale, Model model,HttpServletRequest request ,@RequestParam("name") String name,@ModelAttribute("name") type v1,@CookieValue() Cookie v2){
+	return "/loc" || return "redirect:/loc"}	
+	@RequestMapping("")
+	public ModelAndView name(){}
+}
+--Interceptor
+extends HandlerInterceptorAdapter
+---ctx.xml
+<interceptors>
+	<interceptor>
+	<mapping path="/**"/>
+	<beans:bean class="com.bs.lec21.inter.interceptor"></beans:bean>
+	</interceptor>
+</interceptors>
+
+-pom.xml
+<!-- Spring -->
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>${org.springframework-version}</version>
+	<exclusions>
+		<!-- Exclude Commons Logging in favor of SLF4j -->
+		<exclusion>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		 </exclusion>
+	</exclusions>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-webmvc</artifactId>
+	<version>${org.springframework-version}</version>
+</dependency>
+
+-session
+HttpSession,HttpServletRequest name.getSession()
+-jdbc
+dataSource = new ComboPooledDataSource();
+try {
+	dataSource.setDriverClass(driver);
+	dataSource.setJdbcUrl(url);
+	dataSource.setUser(userid);
+	dataSource.setPassword(userpw);
+} catch (PropertyVetoException e) {
+	e.printStackTrace();
+}
+
+template = new JdbcTemplate();
+template.setDataSource(dataSource);
+result = template.update();
+
+**********
+**MAVEN**
+
+pom.xml
+
+-version
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	
+-dependency
+<dependencies>
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-jsp-api</artifactId>
+		<version>9.0.30</version>
+	</dependency>
+</dependencies>
+
+-repository
+	<repositories>
+        <repository>
+            <id>oracle</id>
+            <name>ORACLE JDBC Repository</name>
+            <url>http://maven.jahia.org/maven2</url>
+        </repository>
+    </repositories>
+	
+--jsp
+<!-- Servlet -->
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>servlet-api</artifactId>
+	<version>2.5</version>
+	<scope>provided</scope>
+</dependency>
+<dependency>
+	<groupId>javax.servlet.jsp</groupId>
+	<artifactId>jsp-api</artifactId>
+	<version>2.1</version>
+	<scope>provided</scope>
+</dependency>
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>jstl</artifactId>
+	<version>1.2</version>
+</dependency>
+
+--jdbc
+<repository>
+	<id>oracle</id>
+	<name>ORACLE JDBC Repository</name>
+	<url>http://maven.jahia.org/maven2</url>
+</repository>
+<!-- DB -->
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc6</artifactId>
+    <version>12.1.0.2</version>
+</dependency>
+<dependency>
+    <groupId>com.mchange</groupId>
+    <artifactId>c3p0</artifactId>
+    <version>0.9.5</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>4.1.6.RELEASE</version>
+</dependency>

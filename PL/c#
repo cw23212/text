@@ -1,7 +1,7 @@
 **c#**
 <meta>
 -기본 자료형
-bool,byte,sbyte,int,,long,ushort,char,string
+bool,byte,sbyte,int,long,ushort,char,string
 type? </ nullable type Nullable<T> >
 var </ 암시적 타입 지역 변수>
 대소문자 구분
@@ -21,8 +21,9 @@ const,readonly
 yeild return var, yeild break; ++++추가
 using NameSpace,namespace Name{class..}
 -배열
-type[] var = new type[] [{...}]; 
-type[,,] var = new type[]; </ 가변 배열>
+type[,] var = new type[,] [{...}]; 
+type[] var = {};
+type[][] var = new type[][]; </ 가변 배열>
 
 -제어문
 if(){}else if(){}else{}
@@ -54,6 +55,8 @@ remove{}
 -함수
 type FName(ref type p1,out type p2,type p3 [=val],params type[] Name){}
 FName(v1,p2:v2)
+--lambda
+(type par1) =>{실행문장;}
 --구조체
 struct Name{}
 --열거형

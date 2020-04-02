@@ -23,7 +23,7 @@ instanceof
 import package....class</ * all>
 enum Name{Name(var),..;};
 
---제어문
+-제어문
 if(){}
 else if()
 else{}
@@ -42,8 +42,11 @@ type [] v1 / ={v1,v2..} /? ;
 v1=new type[]/ [] /?;
 type [][] v1, type v1[][] , type [] v1 []
 
---method(오버로딩)
+-함수 </ 오버로딩>
 접근제어자 반환타입 메소드이름(매개변수목록){}
+--인자
+type...str </ 가변 인자>
+
 
 -클래스
 접근제어자 class Name{Name(){}}
@@ -66,7 +69,8 @@ access interfave Name [ extends interfaceName ] {
 [public static final] type Name;
 [public abstract] Method();}
 --익명클래스
-className Name = new ClassName(){}
+ParentClassName Name = new ParentClassName(){}
+InterfaceName Name = new InterfaceName(){}
 
 --main
 public class FileName{
@@ -86,7 +90,7 @@ T v1;
 <T> R-type M-Name(){} 
 --생성
 Name<Type,...> v1=new Name<Type>();
---와일들카드
+--와일드카드
 <?>
 <? extends T>
 <? super T .
