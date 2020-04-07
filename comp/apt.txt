@@ -1,0 +1,67 @@
+**default**
+apt update
+apt-get install -y tmux
+apt-get install -y git 
+apt-get install -y build-essential
+apt-get install -y w3m
+apt-get install -y less
+
+**mysql,apache,php**
+apt-get install -y mariadb-server mariadb-client
+service mysql start
+apt-get install -y apache2
+apt-get install -y phpmyadmin
+#vim /etc/apache2/apache2.conf
+#include /etc/phpmyadmin/apache.conf
+service apache2 restart
+echo "alias cdweb=\"cd /var/www/html\"" >> .bashrc
+source .bashrc
+mysql -u root -p
+#use mysql
+#update user set plugin='' where user='root';
+#update user set password=PASSWORD('passwd') where user='root';
+#flush privileges;
+#exitapt
+
+
+**docker**
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+
+**jupyter-notebook**
+sudo apt update
+sudo apt-get install python3-pip
+sudo pip3 install notebook
+jupyter notebook --generate-config
+vim .jupyter/jupyter_notebook_config.py
+----
+c=get_config()
+c.NotebookApp.password=u'sha1:878a7b8fdced:fe2e73b1b19addd3b6fa5905ce07a98bcfb7584a' #2867
+c.NotebookApp.ip='ip'
+c.NotebookApp.notebook_dir='/'
+---
+
+sudo jupyter-notebook --ip=0.0.0.0 --port=8888 --allow-root
+sudo vim /etc/systemd/system/jupyter.service
+---
+[unit]
+Description=Jupyter Notebook Server
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/sudo /usr/local/bin/jupyter-notebook --ip=0.0.0.0 --port=8888 --allow-root --config=/home/ubuntu/.jupyter/jupyter_notebook_config.py
+
+[Install]
+WantedBy=multi-user.target
+---
+
+sudo systemctl enable jupyter
+sudo systemctl start jupyter
+sudo systemctl status jupyter
