@@ -35,6 +35,11 @@ mutable
 -배열
 type Name[] [ ={} ]?
 
+-namespace
+namespace Namespace{} </ 중첩 가능>
+namespace Ns1=Ns2:Ns3 
+
+
 -구문
 using Namespace Name;
 using Namespace::Nmae;
@@ -76,11 +81,12 @@ class Name : [access=private] classname{
 public:
 	Nmae() : classname(){}
 }
--함수(오버라이딩)
+
+--함수(오버라이딩)
 Instance.baseClass::method() </des 오버라이딩된 상속 함수 호출>
---가상함수
+---가상함수
 virtual type Name(){}
---수수 가상 함수, 추상클래스
+---수수 가상 함수, 추상클래스
 virtual type name()=0;
 
 -구조체
@@ -101,7 +107,7 @@ for(i : arr){}
 
 -함수 (오버로딩)
 type Name(par,defa=default){}
-type Name const(){} </des 멤버 읽기 전용>
+type Name const(){} </des 멤버 읽기 전용, const 함수만 호출 가능>
 inline type Name(){}
 --전방 선언
 type Name();
@@ -109,6 +115,7 @@ class name;
 
 -연산자 오버로딩
 type operator연산자(){ return }
+</ +,/,&,<<,new,delete,->,[]>
 -프렌트
 friend type functionName(par..);
 friend class classname

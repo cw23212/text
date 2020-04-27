@@ -88,8 +88,14 @@ l, L	long double
 <function>
 ##stdio.h
 printf
+
 ##stdlib.h
+malloc
 
 ##string.h
 strcmp,strcpy,strtok
+
+##crtdbg.h
+_CrtDumpMemoryLeaks
 </function>
+
