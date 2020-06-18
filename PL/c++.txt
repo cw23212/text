@@ -79,7 +79,7 @@ classname.mem
 --상속 	</des 생성자 필수,파생클래스 >
 class Name : [access=private] classname{
 public:
-	Nmae() : classname(){}
+	Name() : classname(){}
 }
 
 --함수(오버라이딩)
@@ -138,8 +138,13 @@ stack,queue,priority_queue
 -access
 private - 선언한 클래스 내에서만
 public - 공개
-default - 같은 패키지의 클래스, 자식 
-protected 같은 패키지의 클래스, 자식 + 다른 패키지 자식
+protected - private + 자식 클래스
+--상속
+inherit/base | public - private - protected
+public : public - hidden - protected
+private : private - hidden - private
+protected : protected - hidden - protected
+default=private
 
 -상수
 NULL
