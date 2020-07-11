@@ -47,6 +47,7 @@ type * p=new Type
 delete p
 delete[] p
 struct Name{};
+union Name{};
 enum Name{}
 typedef type name
 usnig name=type
@@ -62,6 +63,7 @@ typedef type arrays[N];
 volatile
 
 -객체
+[template <typename Name>]
 class name{
 type name;
 public:
@@ -125,7 +127,7 @@ friend type functionName();
 template <typename Name = defaulttype,type Name...> type Name(){}
 template <typename Name> class Nmae{}
 --명시적 특수화
-template <> type Name(){};
+template <> type Name<>(){};
 
 -컨테이너
 --시퀀스

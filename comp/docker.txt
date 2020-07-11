@@ -1,4 +1,44 @@
-**docker**
+***docker***
+
+run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+	-d	detached mode 흔히 말하는 백그라운드 모드
+	-p	호스트와 컨테이너의 포트를 연결 (포워딩)
+	-v	호스트와 컨테이너의 디렉토리를 연결 (마운트)
+	-e	컨테이너 내에서 사용할 환경변수 설정
+	–name	컨테이너 이름 설정
+	–rm	프로세스 종료시 컨테이너 자동 제거
+	-it	-i와 -t를 동시에 사용한 것으로 터미널 입력을 위한 옵션
+	–link	컨테이너 연결 [컨테이너명:별칭]
+ps [OPTIONS]
+	-a
+stop [OPTIONS] CONTAINER [CONTAINER...]
+rm [OPTIONS] CONTAINER [CONTAINER...]
+images [OPTIONS] [REPOSITORY[:TAG]]
+pull [OPTIONS] NAME[:TAG|@DIGEST]
+rmi [OPTIONS] IMAGE [IMAGE...]
+logs [OPTIONS] CONTAINER
+exec [OPTIONS] CONTAINER COMMAND [ARG...]
+	-it
+build [OPTIONS] PATH | URL | -
+
+
+**dockerfile
+FROM <image>:<tag>
+MAINTAINER <name>
+COPY <src>... <dest>
+ADD <src>... <dest> </ URL, 압축 해제>
+RUN <command>
+CMD command param1 param2 </ 컨테이너 실행시 마지막 cmd만>
+WORKDIR <PATH>
+EXPOSE <port> [<port>...]
+VOLUME ["/data"]
+ENV <key> <value>
+ENV <key>=<value> ...
+
+
+**install
+https://docs.docker.com/engine/install/
+
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -8,34 +48,4 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 sudo systemctl status docker
 
-**jupyter-notebook**
-sudo apt update
-sudo apt-get install python3-pip
-sudo pip3 install notebook
-jupyter notebook --generate-config
-vim .jupyter/jupyter_notebook_config.py
-----
-c=get_config()
-c.NotebookApp.password=u'sha1:878a7b8fdced:fe2e73b1b19addd3b6fa5905ce07a98bcfb7584a' #2867
-c.NotebookApp.ip='ip'
-c.NotebookApp.notebook_dir='/'
----
 
-sudo jupyter-notebook --ip=0.0.0.0 --port=8888 --allow-root
-sudo vim /etc/systemd/system/jupyter.service
----
-[unit]
-Description=Jupyter Notebook Server
-
-[Service]
-Type=simple
-User=ubuntu
-ExecStart=/usr/bin/sudo /usr/local/bin/jupyter-notebook --ip=0.0.0.0 --port=8888 --allow-root --config=/home/ubuntu/.jupyter/jupyter_notebook_config.py
-
-[Install]
-WantedBy=multi-user.target
----
-
-sudo systemctl enable jupyter
-sudo systemctl start jupyter
-sudo systemctl status jupyter

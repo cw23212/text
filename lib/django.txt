@@ -1,0 +1,32 @@
+***django***
+
+
+ROOT
+├── apps
+│   ├── __init__.py
+│   ├── common
+│   │   ├── __init__.py
+│   │   ├── http.py
+│   │   └── ...
+│   ├── like
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── models.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   └── tests.py
+│   └── ....
+├── libs
+│   ├── __init__.py
+│   └── <some_library>
+├── templates
+│   ├── css
+│   └── js
+├── static
+├── <proj_name>
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+└── requirements.txt

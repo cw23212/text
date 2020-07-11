@@ -1,0 +1,99 @@
+***flask***
+
+**Flask/class/
+Flask(name)
+debug=True</default False>
+run(debug=False)
+@Falsk.route(url,name=None,methods=['GET']/,'POST']/)
+add_url_rule(url,name,func)
+@Flask.errorhandler
+url_map
+@Flask.before_request()
+@Flask.after_request()
+@Flask.teardown_request()
+
+
+**current_app/instance/
+
+**g/instance/
+
+**request/instance/
+method
+cockie
+
+**session/instance/
+
+
+**Blueprint/class/
+
+**abort/func/
+abort(code)
+**url_for
+url_for(url_rule)
+**jsonify
+jsonify(json)
+**redirect
+redirect(url)
+**make_response
+make_response(str)
+render_template(template_name,**args)</ /templates/ >
+
+
+***template language***
+{{ var }} //표현식
+|capitalize,titme </ filter>
+|lower,upper`
+|trim 
+|safe </이스케이프>
+|striptags </ tag 제거>
+{% %}
+set var=exp
+if exp; else; endif;
+for i in iter; endfor;
+macro func(args);{{ args }}; endmacro; {{ func(args) }}
+import macro
+include common_html
+extends template
+</
+a.html {% block Name1 %}
+b.html {%extends "a.html"%} {%block Name1%} content {%endblock%}
+>
+{# #} </ 주석>
+
+
+**example
+@app.route('/[<[type:]?var>]?')
+def index([var]):
+	req=make_response()
+	return req
+	return render_template(template_name,**args)</ /templates/ >
+	return redirect()
+
+/Projects
+├── flaskr/
+│   ├── __init__.py
+│   ├── db.py
+│   ├── schema.sql
+│   ├── auth.py
+│   ├── blog.py
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── auth/
+│   │   │   ├── login.html
+│   │   │   └── register.html
+│   │   └── blog/
+│   │       ├── create.html
+│   │       ├── index.html
+│   │       └── update.html
+│   └── static/
+│       └── style.css
+├── tests/
+│   ├── conftest.py
+│   ├── data.sql
+│   ├── test_factory.py
+│   ├── test_db.py
+│   ├── test_auth.py
+│   └── test_blog.py
+├── venv/
+├── setup.py
+└── MANIFEST.in
