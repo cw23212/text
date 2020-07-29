@@ -1,31 +1,35 @@
 **JavaScript**
 <meta>
--객체지향,인터프리터,camel case
+-객체지향,프로토타입기반,인터프리터,camel case
 -대소문자
 변수,함수,이름,예약어 구분
 
 -기본 자료형(호이스팅)
 동적 타입
 --원시타입
-num,string,bollean,symbol,undefined,object
+num,string,boolean,symbol,undefined,object
 null = 데이터타입,값x
 undefined =타입x,값x,NaN
 --상수
-Infinity,NaN
+Infinity,NaN </ NaN+num=Nan
 --배열(동적,hole=undefined)
 var arr=[], var arr=Array(), var arr=new Array()
 --연관배열(Array객체,메소드x)
+--boolean
+false = 0,"",NaN,null,undefined
+true=other
 --타입변화
 Number(),String() etc.. 함수
 --범위
 지역변수(함수 내에서 var 사용)
 전역변수(함수내에서 변수 오버라이딩된 변수 호출시 window객체 명시)
 --선언
-var NAME;
+var/const/let NAME; </var 재선언 가능,호이스팅 초기화까지,let 호이스팅 선언만, 블록 범위>
 NAME=value;
 
 -함수(호이스팅)
 function NAME(){}
+function (){}
 (parameter,...)|parameter => {...; return x;}
 --호이스팅
 전역변수->함수->지역변수
@@ -40,12 +44,17 @@ obj.property || obj[property]
 var 객체이름 ={:,:}
 var 객체이름 = new 생성자
 var 객체이름 = object.create(prototype,{:.:})
+--접근
+obj.key1.key2
+obj["key1"]["key2"]
 --생성자
 function obj_name(){ NAME:"",f-name: function(){}}
 constructor()
 --프로퍼티
 obj.new-prop=value
 delete obj.pro
+--method
+methodName:function){}
 ---geter
 get:function(){}
 ---setter
@@ -112,6 +121,8 @@ Document-html-요소[빈 요소 | 텍스트 요소 |  ]
 <object>
 </object>
 <u-object>
+##function
+apply(this_object,argsArray)
 ##window{	<des 생략 가능>
 alert(string)	<des 대화상자>, confirm(), prompt()
 innerheight , innerwidth, open(), close()

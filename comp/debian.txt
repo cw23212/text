@@ -7,12 +7,12 @@ apt-get install -y w3m
 apt-get install -y less
 
 **swap**
-dd if=/dev/zero of=/swapfile bs=1M count=2048
+dd if=/dev/zero of=/swapfile bs=1M count=3072
 chmod  600  /swapfile
 mkswap /swapfile 
 swapon  /swapfile
--/etc/fstab
-UUID=79411347-40af-4680-a31e-657700076ce8 swap swap defaults 0 0
+#-/etc/fstab
+#UUID=79411347-40af-4680-a31e-657700076ce8 swap swap defaults 0 0
 
 **mysql,apache,php**
 apt-get install -y mariadb-server mariadb-client
@@ -73,3 +73,14 @@ WantedBy=multi-user.target
 sudo systemctl enable jupyter
 sudo systemctl start jupyter
 sudo systemctl status jupyter
+
+**docker_debian
+**docker**
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker

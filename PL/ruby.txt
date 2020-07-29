@@ -10,3 +10,15 @@
 */
 -연산
 +(문자),*(문자)
+
+**jekyll
+{{}} 표현식
+{% %}
+include
+if(endif)
+case(when,else,endcase)
+for i in array [limit:int | offset:int] (endfor,else)
+assign k1=v1
+-global variable
+site </ _config.yml>
+page </ page의 --- yml \n --->

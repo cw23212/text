@@ -1,0 +1,11 @@
+FROM python:3.5
+
+RUN pip install pathlib==1.0.1 Flask==1.1.2 gunicorn==20.0.4 numpy scipy scikit-image tensorflow==1.14 opencv-python
+
+RUN mkdir ~/app
+WORKDIR /root/app
+
+CMD gunicorn --bind 0.0.0.0:8000 wsgi
+EXPOSE 8000
+
+#dc run -v  ~/:/root/app -p 80:8000 abc

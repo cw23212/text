@@ -1,4 +1,55 @@
 **sql**
+####mongodb
+-줄 구분
+;
+-대소문자
+-결과값 cursor object
+
+-주석
+--한줄
+#
+--
+-여러줄
+/* ... */
+
+-show
+show dbs
+show collections
+db
+
+-C
+use <collection> </없으면 생성>
+db.<collection>.insert(<document>...)
+db.<collection>.insertOne(<document>)
+db.<collection>.insertMany([<document>..])
+-R
+db.<collection>.find(<querry_criteria>)
+db.<collection>.findOne(<querry_criteria>)
+*querry_criteria
+	-nested document query "key1.key11":val
+	-array key:val = any match, key: {$all:[val1..] }=and match,key:[val...]=all match
+-U
+db.collection.updateOne(<filter>, <update>, <options>) </update-{$set:{},$currentDate{}}>
+db.collection.updateMany(<filter>, <update>, <options>) </update-{document}, _id 제외>
+db.collection.replaceOne(<filter>, <update>, <options>)
+
+-D
+db.collection.deleteMany(<filter>)
+db.collection.deleteOne(<filter>)
+	
+
+-operator </ $op: [exp...]
+$in
+$lt:[]/N
+$or:[]
+$all :[] </ 배열에서 모든 값 일치>
+$slice: N </ array slice,음수 뒤에서부터>
+$type: <BSON Type> </ 10=NULL>
+$exists: <boolean>
+$currentDate:{field:<typespec>} </typespec = true/"timestmp"/"date">
+$set:{}
+$concatArrays:["$document",[]]
+$addFields:{}
 
 ####oracleDb
 <meta>
